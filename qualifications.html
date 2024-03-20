@@ -35,7 +35,7 @@
             <button onclick="openTab(event, 'about')">
                 <a href="index.html" style="text-decoration: none; color: inherit;">About</a>
             </button>
-            <button onclick="openTab(event, 'qualifications')">
+            <button onclick="openTab(event, 'qualifications')" class="active">
                 <a href="qualifications.html" style="text-decoration: none; color: inherit;">Qualifications</a>
             </button>
             <button onclick="openTab(event, 'teaching')">
@@ -47,7 +47,7 @@
             <button onclick="openTab(event, 'publications')">
                     <a href="publications.html" style="text-decoration: none; color: inherit;">Publications</a>
             </button>
-            <button onclick="openTab(event, 'Projects')" class="active">
+            <button onclick="openTab(event, 'Projects')">
                     <a href="projects.html" style="text-decoration: none; color: inherit;">Projects</a>
             </button>
             <button onclick="openTab(event, 'miscleneous')">
@@ -60,43 +60,27 @@
             <h2>About</h2>
             <p>Insert About content here...</p>
         </div>
-        <div id="qualifications" class="tab-content">
+        <div id="qualifications" class="tab-content active">
             <h2>Qualifications</h2>
-            p>Insert About content here...</p>
+            <p>Ph.D. (Engineering), Jadavpur University.</p>
+                <p>M.Tech (Industrial Engineering & Management), West Bengal University of Technology</p>
+                <p>B.Tech (Computer Science & Engineering), National Institute of Technology Calicut</p>
         </div>
         <div id="teaching" class="tab-content">
             <h2>Teaching</h2>
-            <p>Insert research content here...</p>
+            <p>Insert teaching content here...</p>
         </div>
         <div id="research" class="tab-content">
             <h2>Research</h2>
-            <p>Insert projects content here...</p>
+            <p>Insert research content here...</p>
         </div>
         <div id="publications" class="tab-content">
             <h2>Publications</h2>
             <p>Insert publications content here...</p>
         </div>
-        <div id="projects" class="tab-content active">
+        <div id="projects" class="tab-content">
             <h2>Projects</h2>
-            
-            <p>I have worked in various research projects at the Norwegian University of Science and Technology from 2018-2023. I had 
-                a close collaboration with companies in Raufoss Industry Park at the Vestre Toten municipality in Norway including 
-                SINTEF Manufacturing AS. My research group was Digital Technologies.</p>
-            <p>I was also a researcher of SFI Manufacturing at the Norwegian University of Science and Technology (NTNU). It was a
-                developed as a CoE of Manufacturing and Automation. My project work was related to the development of a vision-based 
-                quality inspection system for the Cyber-Physical System (CP) Learning Factory. This work had a collaboration with 
-                SINTEF Manufacturing AS Norway. I dealt with big data inside the CP factory and used ML/AI to predict/maintain the 
-                system's performance. </p>
-            <p>During my postdoc days at Norway I also had collaborative research work with researchers from IIT Kharagpur, the work 
-                was based on the Multi-objective optimization of the powertrain of EV. </p>
-            <p>I am also an expert researcher in building mathematical models to aid Decision-Support Systems and Multi-Criteria 
-                Decision-Making tools. I have prior expertise in developing and implementing evolutionary algorithms, 
-                nature-inspired optimization, and deep learning tools and techniques.</p>
-                <h3>Focused Research Area:</h3>
-            <p><li>ML-assisted Evolutionary and Nature-Inspired Optimization Application</li></p>
-            <p><li>Machine Learning and Big Data Analytics in the context of Industry 4.0</li></p>
-            <p><li>Digitalization of Production, Industrial IoT and Cyber-Physical Systems within Industry 4.0</li></p>
-            <p><li>Sensor-based IoT applications to create low-cost smart devices</li></p>
+            <p>Insert projects content here...</p>
         </div>
         <div id="more" class="tab-content">
             <h2>More</h2>
@@ -108,6 +92,7 @@
 </body>
 <footer>
     <div class="footer-content">
+        <p>Page Counter: <span id="page-counter">0</span></p>
         <p>Created by Tamal Ghosh, Email: dr.tamal.ghosh@outlook.com; Phone: +91-9163253061 </p> 
         <p>&copy; 2024 All rights reserved</p>
     </div>

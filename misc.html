@@ -47,10 +47,10 @@
             <button onclick="openTab(event, 'publications')">
                     <a href="publications.html" style="text-decoration: none; color: inherit;">Publications</a>
             </button>
-            <button onclick="openTab(event, 'Projects')" class="active">
+            <button onclick="openTab(event, 'Projects')">
                     <a href="projects.html" style="text-decoration: none; color: inherit;">Projects</a>
             </button>
-            <button onclick="openTab(event, 'miscleneous')">
+            <button onclick="openTab(event, 'miscleneous')"  class="active">
                     <a href="misc.html" style="text-decoration: none; color: inherit;">Miscleneous</a>
                 </button>
         </div>
@@ -76,31 +76,16 @@
             <h2>Publications</h2>
             <p>Insert publications content here...</p>
         </div>
-        <div id="projects" class="tab-content active">
+        <div id="projects" class="tab-content">
             <h2>Projects</h2>
-            
-            <p>I have worked in various research projects at the Norwegian University of Science and Technology from 2018-2023. I had 
-                a close collaboration with companies in Raufoss Industry Park at the Vestre Toten municipality in Norway including 
-                SINTEF Manufacturing AS. My research group was Digital Technologies.</p>
-            <p>I was also a researcher of SFI Manufacturing at the Norwegian University of Science and Technology (NTNU). It was a
-                developed as a CoE of Manufacturing and Automation. My project work was related to the development of a vision-based 
-                quality inspection system for the Cyber-Physical System (CP) Learning Factory. This work had a collaboration with 
-                SINTEF Manufacturing AS Norway. I dealt with big data inside the CP factory and used ML/AI to predict/maintain the 
-                system's performance. </p>
-            <p>During my postdoc days at Norway I also had collaborative research work with researchers from IIT Kharagpur, the work 
-                was based on the Multi-objective optimization of the powertrain of EV. </p>
-            <p>I am also an expert researcher in building mathematical models to aid Decision-Support Systems and Multi-Criteria 
-                Decision-Making tools. I have prior expertise in developing and implementing evolutionary algorithms, 
-                nature-inspired optimization, and deep learning tools and techniques.</p>
-                <h3>Focused Research Area:</h3>
-            <p><li>ML-assisted Evolutionary and Nature-Inspired Optimization Application</li></p>
-            <p><li>Machine Learning and Big Data Analytics in the context of Industry 4.0</li></p>
-            <p><li>Digitalization of Production, Industrial IoT and Cyber-Physical Systems within Industry 4.0</li></p>
-            <p><li>Sensor-based IoT applications to create low-cost smart devices</li></p>
-        </div>
-        <div id="more" class="tab-content">
-            <h2>More</h2>
             <p>Insert more content here...</p>
+            
+        </div>
+        <div id="miscleneous" class="tab-content active">
+            <h2>Miscleneous</h2>
+            <h3>Journals to be considered worth in my work area</h3>
+            <iframe src="ABDCABS.pdf" width="100%" height="600"></iframe>
+            
         </div>
     </div>
     <script src="script.js"></script>
@@ -108,7 +93,8 @@
 </body>
 <footer>
     <div class="footer-content">
-        <p>Created by Tamal Ghosh, Email: dr.tamal.ghosh@outlook.com; Phone: +91-9163253061 </p> 
+        <p>Page Counter: <span id="page-counter">0</span></p>
+        <p>Created by Tamal Ghosh, Email: dr.tamal.ghosh@outlook.com; Phone: +91-9163253061</p> 
         <p>&copy; 2024 All rights reserved</p>
     </div>
 </footer>

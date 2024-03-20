@@ -1,0 +1,177 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    background-image: url('texture.jpg'); /* Replace 'texture.jpg' with the path to your texture image */
+    background-size: cover;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 150px;
+}
+
+h2 {
+    color: #002eba;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-image: url('header.jpg'); /* Replace 'header-background.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    color: #040404;
+    padding: 20px;
+    margin-bottom: 20px; /* Adjust margin bottom */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header-content h1 {
+    color: #fcfbfb; /* Change font color to white */
+    font-size: 72px;
+    
+}
+.header-content h2 {
+    color: #fd388d; /* Change font color to white */
+    font-size: 36px;
+}
+.header-content p {
+    color: #fdd407; /* Change font color to white */
+    font-size: 24px;
+    margin-bottom: 1px;
+}
+
+/* Style for email hyperlink */
+a {
+    color: rgb(164, 164, 238); /* Change to your desired color */
+  }
+  
+  /* Style for visited email hyperlink */
+  a:visited {
+    color: purple; /* Change to your desired color */
+  }
+  
+  /* Style for hover effect on email hyperlink */
+  a:hover {
+    color: red; /* Change to your desired color */
+  }
+  
+  /* Style for active state of email hyperlink */
+  a:active {
+    color: green; /* Change to your desired color */
+  }
+.profile-picture img {
+    width: 300px; /* Adjust the width as needed */
+    height: 370px; /* Set the height equal to width for a square shape */
+    border-radius: 1px; /* Add border-radius for rounded corners */
+}
+
+.profile-picture {
+    margin-right: 30px; /* Add margin to the right side of the profile picture */
+    margin-bottom: 1px;
+}
+
+/* Style for social media icons */
+.social-media {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+  }
+  
+  .social-icon {
+    margin-right: 150px;
+  }
+  
+  .social-icon img {
+    width: 50px; /* Adjust size of social media icons */
+  }
+
+.intro {
+    max-width: 60%;
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Change font to Impact */
+}
+
+/* Tab styles */
+.tabs {
+    display: flex;
+}
+
+.tab-links {
+    background-color: #042b46; /* Change to blue color */
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab-links button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    float: left;
+    color: #ffffff;
+}
+
+.tab-links button:hover,
+.tab-links button.active {
+    background-color: #82600a;
+    border: 2px solid #ffffff; /* Add border around active tab title */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 14px 16px; /* Adjust padding for space inside the border */
+}
+
+.tab-content {
+    pointer-events: none; /* Disable pointer events */
+    cursor: default; /* Set cursor to default */
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.tab-content.active {
+    display: block;
+    border: 2px solid #570155; /* Add border around active tab content */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding for space inside the border */
+}
+footer {
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding around the content */
+    text-align: center; /* Center-align the content */
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Stick it to the bottom */
+    width: 100%; /* Full width */
+    margin-top: 120px; /* Add space before the footer */
+    background-color: #040932;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 0; /* Adjust the padding to reduce footer size */
+    font-size: 12px; /* Adjust the font size */
+}
+
+.footer-content {
+    max-width: 800px; /* Limit the width of the content */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+.footer-content p {
+    margin: 5px; /* Add margin between paragraphs */
+}

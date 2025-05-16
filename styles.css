@@ -49,18 +49,18 @@ header {
     
 }
 .header-content h2 {
-    color: #fd388d; /* Change font color to white */
+    color: #020202; /* Change font color to white */
     font-size: 36px;
 }
 .header-content p {
-    color: #fdd407; /* Change font color to white */
+    color: #060606; /* Change font color to white */
     font-size: 24px;
     margin-bottom: 1px;
 }
 
 /* Style for email hyperlink */
 a {
-    color: rgb(164, 164, 238); /* Change to your desired color */
+    color: rgb(0, 0, 252); /* Change to your desired color */
   }
   
   /* Style for visited email hyperlink */
@@ -78,13 +78,13 @@ a {
     color: green; /* Change to your desired color */
   }
 .profile-picture img {
-    width: 300px; /* Adjust the width as needed */
+    width: 260px; /* Adjust the width as needed */
     height: 370px; /* Set the height equal to width for a square shape */
     border-radius: 1px; /* Add border-radius for rounded corners */
 }
 
 .profile-picture {
-    margin-right: 30px; /* Add margin to the right side of the profile picture */
+    margin-right: 10px; /* Add margin to the right side of the profile picture */
     margin-bottom: 1px;
 }
 
@@ -174,4 +174,12 @@ footer {
 
 .footer-content p {
     margin: 5px; /* Add margin between paragraphs */
+}
+
+.intro p {
+    margin: 2px 0; /* Reduce top and bottom margins */
+    padding: 0;
+}
+.intro h2 {
+    margin-bottom: 6px; /* Optional: reduce space under heading */
 }

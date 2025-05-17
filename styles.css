@@ -28,7 +28,7 @@ p {
 
 /* Header styles */
 header {
-    background-image: url('header.jpg'); /* Replace 'header-background.jpg' with the path to your image */
+    background-image: url('header.jpeg'); /* Replace 'header-background.jpg' with the path to your image */
     background-size: cover;
     background-position: center;
     color: #040404;

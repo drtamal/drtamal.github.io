@@ -1,185 +1,161 @@
-/* General styles */
+/* ================= General Styles ================= */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    background-image: url('texture.jpg'); /* Replace 'texture.jpg' with the path to your texture image */
+    background: #f0f2f5 url('texture.jpeg') no-repeat center center fixed;
     background-size: cover;
+    color: #333;
 }
 
 .container {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    margin-bottom: 150px;
+    margin: 40px auto 150px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #002eba;
+/* ================= Typography ================= */
+h1, h2, h3 {
+    color: #002b7f;
+    margin-bottom: 12px;
 }
 
 p {
     line-height: 1.6;
+    margin-bottom: 12px;
 }
 
-/* Header styles */
+/* ================= Header ================= */
 header {
-    background-image: url('header.jpeg'); /* Replace 'header-background.jpg' with the path to your image */
-    background-size: cover;
-    background-position: center;
-    color: #040404;
+    background: url('header.jpeg') center center / cover no-repeat;
+    color: #ffffff;
     padding: 20px;
-    margin-bottom: 20px; /* Adjust margin bottom */
+    margin-bottom: 20px;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
+    flex-wrap: wrap;
 }
 
 .header-content h1 {
-    color: #fcfbfb; /* Change font color to white */
-    font-size: 72px;
-    
-}
-.header-content h2 {
-    color: #020202; /* Change font color to white */
     font-size: 36px;
+    color: #ffffff;
+    margin: 0;
 }
+
+.header-content h2,
 .header-content p {
-    color: #060606; /* Change font color to white */
-    font-size: 24px;
-    margin-bottom: 1px;
+    color: #eeeeee;
+    margin: 4px 0;
 }
 
-/* Style for email hyperlink */
-a {
-    color: rgb(0, 0, 252); /* Change to your desired color */
-  }
-  
-  /* Style for visited email hyperlink */
-  a:visited {
-    color: purple; /* Change to your desired color */
-  }
-  
-  /* Style for hover effect on email hyperlink */
-  a:hover {
-    color: red; /* Change to your desired color */
-  }
-  
-  /* Style for active state of email hyperlink */
-  a:active {
-    color: green; /* Change to your desired color */
-  }
-.profile-picture img {
-    width: 260px; /* Adjust the width as needed */
-    height: 370px; /* Set the height equal to width for a square shape */
-    border-radius: 1px; /* Add border-radius for rounded corners */
-}
-
+/* ================= Profile Picture ================= */
 .profile-picture {
-    margin-right: 10px; /* Add margin to the right side of the profile picture */
-    margin-bottom: 1px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Style for social media icons */
+.profile-picture img {
+    width: 200px;
+    height: 300px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* ================= Social Media Icons ================= */
+/* Social Media Icons in a Row Below Image */
 .social-media {
     display: flex;
-    flex-direction: column; /* Arrange items vertically */
-  }
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 12px;
+    gap: 10px; /* spacing between icons */
+}
+
+.social-icon img {
+    width: 30px; /* adjust as needed */
+    height: 30px;
+}
+
   
-  .social-icon {
-    margin-right: 150px;
-  }
-  
-  .social-icon img {
-    width: 50px; /* Adjust size of social media icons */
-  }
 
-.intro {
-    max-width: 60%;
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Change font to Impact */
+/* ================= Intro Section ========*
+
+/* Font Awesome CDN (Add in your <head> if not already included) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* Modern Footer Styling */
+.site-footer {
+  background-color: #000000;
+  color: #dcdcdc;
+  padding: 40px 20px;
+  font-size: 14px;
 }
 
-/* Tab styles */
-.tabs {
-    display: flex;
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
-.tab-links {
-    background-color: #042b46; /* Change to blue color */
-    overflow: hidden;
-    border-radius: 5px 5px 0 0;
+.footer-about p {
+  margin-top: 8px;
+  line-height: 1.6;
 }
 
-.tab-links button {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    float: left;
-    color: #ffffff;
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.tab-links button:hover,
-.tab-links button.active {
-    background-color: #82600a;
-    border: 2px solid #ffffff; /* Add border around active tab title */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    padding: 14px 16px; /* Adjust padding for space inside the border */
+.footer-links li {
+  margin-bottom: 8px;
 }
 
-.tab-content {
-    pointer-events: none; /* Disable pointer events */
-    cursor: default; /* Set cursor to default */
-    display: none;
-    padding: 20px;
-    border-top: 1px solid #ddd;
+.footer-links a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.tab-content.active {
-    display: block;
-    border: 2px solid #570155; /* Add border around active tab content */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    padding: 20px; /* Add padding for space inside the border */
+.footer-links a:hover {
+  color: #f4d03f;
 }
-footer {
-    background-color: #333; /* Background color for the footer */
-    color: #fff; /* Text color */
-    padding: 20px; /* Padding around the content */
-    text-align: center; /* Center-align the content */
-    position: fixed; /* Fixed positioning */
-    bottom: 0; /* Stick it to the bottom */
-    width: 100%; /* Full width */
-    margin-top: 120px; /* Add space before the footer */
-    background-color: #040932;
-    color: #ffffff;
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #dcdcdc;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00aced;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
     text-align: center;
-    padding: 8px 0; /* Adjust the padding to reduce footer size */
-    font-size: 12px; /* Adjust the font size */
-}
+  }
 
-.footer-content {
-    max-width: 800px; /* Limit the width of the content */
-    margin: 0 auto; /* Center the content horizontally */
-}
-
-.footer-content p {
-    margin: 5px; /* Add margin between paragraphs */
-}
-
-.intro p {
-    margin: 2px 0; /* Reduce top and bottom margins */
-    padding: 0;
-}
-.intro h2 {
-    margin-bottom: 6px; /* Optional: reduce space under heading */
+  .footer-social .social-icons {
+    justify-content: center;
+  }
 }

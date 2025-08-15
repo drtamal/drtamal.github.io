@@ -18,6 +18,29 @@
                 <p>Email: <a href="mailto:tamal.ghosh1@adamasuniversity.ac.in">tamal.ghosh1@adamasuniversity.ac.in</a></p>
                 
             </div>
+            <div id="widget-container" style="display: flex; justify-content: space-around; align-items: center; padding: 20px; flex-wrap: wrap;">
+  
+              <!-- Digital Clock -->
+              <div id="clock" style="font-size: 24px; font-family: 'Courier New', monospace; background: #222; color: #0f0; padding: 20px; border-radius: 10px; margin: 10px;">
+                Loading time...
+              </div>
+            
+              <!-- Weather Widget -->
+              <div id="weather" style="margin: 10px;">
+                <iframe
+                  src="https://forecast7.com/en/28d61n77d23/delhi/?unit=c"
+                  frameborder="0"
+                  width="300"
+                  height="200"
+                  style="border-radius: 10px; overflow: hidden;"
+                  title="Weather Widget"
+                ></iframe>
+                <div style="text-align: center; font-size: 12px; margin-top: 5px;">
+                  <a href="https://forecast7.com/" target="_blank" style="text-decoration: none; color: #555;">Powered by Forecast7</a>
+                </div>
+              </div>
+            
+            </div>
             <div class="profile-picture">
                 <img src="profile3.jpg" alt="Profile Picture">
             
@@ -69,6 +92,17 @@
             </section>
         </main>
     </div>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString();
+        document.getElementById("clock").textContent = timeStr;
+      }
+      setInterval(updateClock, 1000);
+      updateClock(); // Initial call
+    </script>
+      <script src="script.js"></script>
+      <script src="page-counter.js"></script>
 </body>
 <footer class="site-footer">
     <div class="footer-container">
@@ -93,13 +127,12 @@
       <div class="footer-social">
         <h3>Connect</h3>
         <div class="social-icons">
-          <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/dr-tamal-ghosh-13454a5b/">LinkedIn</a>
           <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
           <a href="mailto:you@example.com"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
   </footer>
-  <script src="script.js"></script>
-    <script src="page-counter.js"></script>
+
 </html>

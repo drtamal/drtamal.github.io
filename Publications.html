@@ -10,6 +10,27 @@
     <header>
         <div class="header-content">
             <div class="intro">
+			<!-- Row with Clock + Weather -->
+    <div class="info-row" 
+         style="display: flex; justify-content: center; 
+                gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+
+      <!-- Clock -->
+      <div id="clock" 
+           style="font-size: 24px; font-family: 'Serif', monospace; 
+                  background: #222; color: #ff4800; padding: 20px; 
+                  border-radius: 10px; text-align: center;">
+        Loading time...
+      </div>
+
+      <!-- Weather -->
+      <div id="weather" 
+           style="font-size: 24px; font-family: 'Serif', monospace; 
+                  background: #222; color: #ff4800; padding: 20px; 
+                  border-radius: 10px; text-align: center;">
+        Loading weather...
+      </div>
+    </div>
                 <h2>Dr. Tamal Ghosh</h2>
                 <p>Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor </p>
                 <p>Department of Computer Science & Engineering </p>
@@ -120,7 +141,40 @@
         </div>
         
     </div>
-    
+<script>
+  // Digital Clock
+  function updateClock() {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString();
+    document.getElementById("clock").textContent = timeStr;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Live Weather
+  async function fetchWeather() {
+    const city = "Kolkata,IN";  // Change to your city
+    const apiKey = "e739bc586a5e8b97f5844b552468f47c"; // Replace with OpenWeather API Key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      if (data.cod === 200) {
+        const temp = data.main.temp.toFixed(1);
+        const desc = data.weather[0].description;
+        document.getElementById("weather").textContent =
+          `${city}: ${temp}°C, ${desc}`;
+      } else {
+        document.getElementById("weather").textContent = "Weather not available";
+      }
+    } catch (error) {
+      document.getElementById("weather").textContent = "Error fetching weather";
+    }
+  }
+  fetchWeather();
+  setInterval(fetchWeather, 600000); // Update every 10 min
+</script>    
 </body>
 <footer class="site-footer">
     <div class="footer-container">

@@ -8,37 +8,56 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
-			<div class="intro">
-				<div id="clock" style="font-size: 24px; font-family: 'Impact', monospace; background: #222; color: #0f0; padding: 20px; border-radius: 10px; margin: 10px;">
-                Loading time...
-				</div>
-				<div id="weather" style="font-size: 24px; font-family: 'Impact', monospace; background: #222; color: #0f0; padding: 20px; border-radius: 10px; margin: 10px;">
-                Loading weather...
-				</div>
-                <h2>Dr. Tamal Ghosh</h2>
-                <p>Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor </p>
-                <p>Department of Computer Science & Engineering </p>
-                <p>School of Engineering and Technology</p>
-                <p>Adamas University</p>
-                <p>Email: <a href="mailto:tamal.ghosh1@adamasuniversity.ac.in">tamal.ghosh1@adamasuniversity.ac.in</a></p>
-                
-            </div>
-            <div class="profile-picture">
-                <img src="profile3.jpg" alt="Profile Picture">
-            
-                <div class="social-media">
-                    <a href="https://www.linkedin.com/in/dr-tamal-ghosh-13454a5b/" class="social-icon"><img src="linkedin.jpg" alt="LinkedIn"></a>
-                    <a href="https://drive.google.com/file/d/1bG1BT6pyPY5fmmiP46SY5Zb_1kTWOQWb/view" class="social-icon"><img src="cv.jpg" alt="CV"></a>
-                    <a href="https://orcid.org/0000-0002-3225-9450" class="social-icon"><img src="orcid.jpg" alt="ORCID"></a>
-                    <a href="" class="social-icon"><img src="researchgate.jpg" alt="ResearchGate"></a>
-                    <a href="https://scholar.google.com/citations?user=vOmC9A0AAAAJ&hl=en" class="social-icon"><img src="googlescholar.jpg" alt="Google Scholar"></a>
-                    <a href="https://www.scopus.com/authid/detail.uri?authorId=52163539500" class="social-icon"><img src="scopus.jpg" alt="Scopus"></a>
-                    <a href="https://www.webofscience.com/wos/author/record/HNQ-0122-2023" class="social-icon"><img src="wos.png" alt="Web of Science"></a>
-                </div>
-            </div>
-        </div>
-    </header>
+  <div class="header-content">
+
+    <!-- Row with Clock + Weather -->
+    <div class="info-row" 
+         style="display: flex; justify-content: center; 
+                gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+
+      <!-- Clock -->
+      <div id="clock" 
+           style="font-size: 24px; font-family: 'Impact', monospace; 
+                  background: #222; color: #0f0; padding: 20px; 
+                  border-radius: 10px; text-align: center;">
+        Loading time...
+      </div>
+
+      <!-- Weather -->
+      <div id="weather" 
+           style="font-size: 24px; font-family: 'Impact', monospace; 
+                  background: #222; color: #0f0; padding: 20px; 
+                  border-radius: 10px; text-align: center;">
+        Loading weather...
+      </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="intro">
+      <h2>Dr. Tamal Ghosh</h2>
+      <p>Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor </p>
+      <p>Department of Computer Science & Engineering </p>
+      <p>School of Engineering and Technology</p>
+      <p>Adamas University</p>
+      <p>Email: <a href="mailto:tamal.ghosh1@adamasuniversity.ac.in">tamal.ghosh1@adamasuniversity.ac.in</a></p>
+    </div>
+
+    <!-- Profile + Social Media -->
+    <div class="profile-picture">
+      <img src="profile3.jpg" alt="Profile Picture">
+      <div class="social-media">
+        <a href="https://www.linkedin.com/in/dr-tamal-ghosh-13454a5b/" class="social-icon"><img src="linkedin.jpg" alt="LinkedIn"></a>
+        <a href="https://drive.google.com/file/d/1bG1BT6pyPY5fmmiP46SY5Zb_1kTWOQWb/view" class="social-icon"><img src="cv.jpg" alt="CV"></a>
+        <a href="https://orcid.org/0000-0002-3225-9450" class="social-icon"><img src="orcid.jpg" alt="ORCID"></a>
+        <a href="" class="social-icon"><img src="researchgate.jpg" alt="ResearchGate"></a>
+        <a href="https://scholar.google.com/citations?user=vOmC9A0AAAAJ&hl=en" class="social-icon"><img src="googlescholar.jpg" alt="Google Scholar"></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=52163539500" class="social-icon"><img src="scopus.jpg" alt="Scopus"></a>
+        <a href="https://www.webofscience.com/wos/author/record/HNQ-0122-2023" class="social-icon"><img src="wos.png" alt="Web of Science"></a>
+      </div>
+    </div>
+  </div>
+</header>
+
 
     <div class="container">
         <div class="tab-links">
@@ -76,28 +95,24 @@
         </main>
     </div>
     <script>
-      function updateClock() {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString();
-        document.getElementById("clock").textContent = timeStr;
-      }
-      setInterval(updateClock, 1000);
-      updateClock(); // Initial call
-    </script>
-      <script src="script.js"></script>
-      <script src="page-counter.js"></script>
-	  <script>
-  async function fetchWeather() {
-    // Replace with your own city and API key
-    const city = "Kolkata";
-    const apiKey = "90cf0dd2021e6a008a16d88c70e314f4"; // Get from https://openweathermap.org/api
+  // Digital Clock
+  function updateClock() {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString();
+    document.getElementById("clock").textContent = timeStr;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
 
+  // Live Weather
+  async function fetchWeather() {
+    const city = "Kolkata";  // Change to your city
+    const apiKey = "YOUR_API_KEY"; // Replace with OpenWeather API Key
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     try {
       const response = await fetch(url);
       const data = await response.json();
-
       if (data.cod === 200) {
         const temp = data.main.temp.toFixed(1);
         const desc = data.weather[0].description;
@@ -110,11 +125,10 @@
       document.getElementById("weather").textContent = "Error fetching weather";
     }
   }
-
-  // Fetch weather on load and update every 10 minutes
   fetchWeather();
-  setInterval(fetchWeather, 600000);
+  setInterval(fetchWeather, 600000); // Update every 10 min
 </script>
+
 
 </body>
 <footer class="site-footer">

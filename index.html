@@ -13,6 +13,9 @@
 				<div id="clock" style="font-size: 24px; font-family: 'Impact', monospace; background: #222; color: #0f0; padding: 20px; border-radius: 10px; margin: 10px;">
                 Loading time...
 				</div>
+				<div id="weather" style="font-size: 24px; font-family: 'Impact', monospace; background: #222; color: #0f0; padding: 20px; border-radius: 10px; margin: 10px;">
+                Loading weather...
+				</div>
                 <h2>Dr. Tamal Ghosh</h2>
                 <p>Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor </p>
                 <p>Department of Computer Science & Engineering </p>
@@ -83,6 +86,36 @@
     </script>
       <script src="script.js"></script>
       <script src="page-counter.js"></script>
+	  <script>
+  async function fetchWeather() {
+    // Replace with your own city and API key
+    const city = "Kolkata";
+    const apiKey = "YOUR_API_KEY"; // Get from https://openweathermap.org/api
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.cod === 200) {
+        const temp = data.main.temp.toFixed(1);
+        const desc = data.weather[0].description;
+        document.getElementById("weather").textContent =
+          `${city}: ${temp}°C, ${desc}`;
+      } else {
+        document.getElementById("weather").textContent = "Weather not available";
+      }
+    } catch (error) {
+      document.getElementById("weather").textContent = "Error fetching weather";
+    }
+  }
+
+  // Fetch weather on load and update every 10 minutes
+  fetchWeather();
+  setInterval(fetchWeather, 600000);
+</script>
+
 </body>
 <footer class="site-footer">
     <div class="footer-container">

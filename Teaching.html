@@ -6,6 +6,7 @@
     <title>Biography</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file -->
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -83,8 +84,12 @@
        
         <div id="teaching" class="tab-content active">
             <h2>Teaching</h2>            
-            <p>1. Introduction to Artificial Intelligence (CSE 11112), Adamas University Kolkata, Summer 2024, 2025 (B.Tech)</p>
-            <p>2. Machine Learning (CSE 21816), Adamas University Kolkata, Winter 2023, Summer 2024, 2025 (PhD)</p>
+           <p>1. Introduction to Artificial Intelligence (CSE 11112), Adamas University Kolkata, (B.Tech) Summer 
+  <a href="#" onclick="openSlidesModal(); return false;">
+    2024, 2025, 2026 
+  </a>
+</p>
+            <p>2. Machine Learning (CSE 21816), Adamas University Kolkata, Winter 2023, Summer and Winter 2024, Summer and Winter 2025 (PhD)</p>
             <p>3. Computer Vision (CSE21851) Adamas University Kolkata, Summer 2025 (M.Tech)</p>
             <p>4. Business Intelligence (CSE11457), Adamas University Kolkata, Fall 2024 (BCA)</p>
             <p>5. Foundation of Computing Science (CSE21844), Adamas University Kolkata, Fall 2024 (M.Tech)</p>
@@ -129,7 +134,71 @@
   }
   fetchWeather();
   setInterval(fetchWeather, 600000); // Update every 10 min
-</script>    
+</script> 
+
+<!-- Slides Modal -->
+<div id="slidesModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeSlidesModal()">&times;</span>
+    <h3>Introduction to Artificial Intelligence (CSE 11112)</h3>
+
+    <ul>
+  <li>
+    <a href="slides/AI/IAI lecture 1_ AI BAsics.pdf" target="_blank">
+      Lecture 1 AI Basics
+    </a>
+  </li>
+  <li>
+    <a href="slides/AI/IAI lecture 2_Agents.pdf" target="_blank">
+      Lecture 2 Intelligent Agents
+    </a>
+  </li>
+  <li>
+    <a href="slides/AI/IAI lecture 3_Problem Formulation.pdf" target="_blank">
+      Lecture 3 Problem Formulation
+    </a>
+  </li>
+  <li>
+    <a href="slides/AI/IAI lecture 4_Uninformed Search.pdf" target="_blank">
+      Lecture 4 Uninformed Search
+    </a>
+  </li>
+  <li>
+    <a href="slides/AI/IAI lecture 5_Informed Search.pdf" target="_blank">
+      Lecture 5 Informed Search
+    </a>
+  </li>
+  <li>
+    <a href="slides/AI/IAI lecture 6_Satisfying Constraints.pdf" target="_blank">
+      Lecture 6 Constraint Satisfaction Problems
+    </a>
+  </li>
+  <li>
+    <a href="slides/AI/IAI lecture 7_Genetic Algorithm.pdf" target="_blank">
+      Lecture 7 Genetic Algorithms
+    </a>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+function openSlidesModal() {
+  document.getElementById("slidesModal").style.display = "block";
+}
+
+function closeSlidesModal() {
+  document.getElementById("slidesModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("slidesModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </body>
 <footer class="site-footer">
     <div class="footer-container">

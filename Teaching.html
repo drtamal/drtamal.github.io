@@ -32,7 +32,7 @@
         Loading weather...
       </div>
     </div>
-                <h2>Dr. Tamal Ghosh</h2>
+                <h2>Dr. Tamal Ghosh, PostDoc (NTNU, Norway), PhD (JU), B.Tech (CSE, NIT Calicut)</h2>
                 <p>Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor </p>
                 <p>Department of Computer Science & Engineering </p>
                 <p>School of Engineering and Technology</p>
@@ -84,15 +84,9 @@
        
         <div id="teaching" class="tab-content active">
             <h2>Teaching</h2>            
-           <p>1. Introduction to Artificial Intelligence (CSE 11112), Adamas University Kolkata, (B.Tech) Summer 
-  <a href="#" onclick="openSlidesModal(); return false;">
-    2024, 2025, 2026 
-  </a>
-</p>
-            <p>2. Machine Learning (CSE 21816), Adamas University Kolkata, Winter 2023, Summer and Winter 2024, Summer and Winter 2025 (PhD)</p>
-            <p>3. Computer Vision (CSE21851) Adamas University Kolkata, Summer 2025 (M.Tech)</p>
+            <p>1. Introduction to Artificial Intelligence (CSE 11112), (B.Tech) Summer 2024, 2025, <a href="#" onclick="openSlidesModal(); return false;"> 2026 </a> </p>
+            <p>2. Machine Learning (CSE 21816), Winter 2023, Summer and Winter 2024, Summer and <a href="#" onclick="openSlidesModal1(); return false;"> Winter 2025 (PhD)</a></p>
             <p>4. Business Intelligence (CSE11457), Adamas University Kolkata, Fall 2024 (BCA)</p>
-            <p>5. Foundation of Computing Science (CSE21844), Adamas University Kolkata, Fall 2024 (M.Tech)</p>
             <p>6. Applied Computing (CSE22845), Adamas University Kolkata, Fall 2024 (M.Tech)</p>
             <p>7. Introduction to Programming (CSE 11001), Adamas University Kolkata, Summer 2024 (B.Tech)</p>            
             <p>8. Disruptive Technology Innovation (GEE 11012), Adamas University Kolkata, Summer 2024 (B.Tech)</p>
@@ -140,46 +134,87 @@
 <div id="slidesModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeSlidesModal()">&times;</span>
-    <h3>Introduction to Artificial Intelligence (CSE 11112)</h3>
+    <div class="lecture-grid">
 
-    <ul>
-  <li>
-    <a href="slides/AI/IAI lecture 1_ AI BAsics.pdf" target="_blank">
-      Lecture 1 AI Basics
+    <a href="slides/AI/IAI lecture 1_AI BAsics.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L01_AI_Basics.png" alt="Lecture 1 AI Basics">
+      <span>Lecture 1<br>AI Basics</span>
     </a>
-  </li>
-  <li>
-    <a href="slides/AI/IAI lecture 2_Agents.pdf" target="_blank">
-      Lecture 2 Intelligent Agents
+  
+    <a href="slides/AI/IAI lecture 2_Agents.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L02_Agents.png" alt="Lecture 2 Agents">
+      <span>Lecture 2<br>Intelligent Agents</span>
     </a>
-  </li>
-  <li>
-    <a href="slides/AI/IAI lecture 3_Problem Formulation.pdf" target="_blank">
-      Lecture 3 Problem Formulation
+  
+    <a href="slides/AI/IAI lecture 3_Problem Formulation.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L03_Problem_Formulation.png" alt="Lecture 3 Problem Formulation">
+      <span>Lecture 3<br>Problem Formulation</span>
     </a>
-  </li>
-  <li>
-    <a href="slides/AI/IAI lecture 4_Uninformed Search.pdf" target="_blank">
-      Lecture 4 Uninformed Search
+  
+    <a href="slides/AI/IAI lecture 4_Uninformed Search.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L04_Uninformed_Search.png" alt="Lecture 4 Uninformed Search">
+      <span>Lecture 4<br>Uninformed Search</span>
     </a>
-  </li>
-  <li>
-    <a href="slides/AI/IAI lecture 5_Informed Search.pdf" target="_blank">
-      Lecture 5 Informed Search
+  
+    <a href="slides/AI/IAI lecture 5_Informed Search.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L05_Informed_Search.png" alt="Lecture 5 Informed Search">
+      <span>Lecture 5<br>Informed Search</span>
     </a>
-  </li>
-  <li>
-    <a href="slides/AI/IAI lecture 6_Satisfying Constraints.pdf" target="_blank">
-      Lecture 6 Constraint Satisfaction Problems
+  
+    <a href="slides/AI/IAI lecture 6_Satisfying Constraints.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L06_CSP.png" alt="Lecture 6 CSP">
+      <span>Lecture 6<br>Constraint Satisfaction</span>
     </a>
-  </li>
-  <li>
-    <a href="slides/AI/IAI lecture 7_Genetic Algorithm.pdf" target="_blank">
-      Lecture 7 Genetic Algorithms
+  
+    <a href="slides/AI/IAI lecture 7_Genetic Algorithm.pdf" target="_blank" class="lecture-card">
+      <img src="slides/AI/thumbs/L07_GA.png" alt="Lecture 7 GA">
+      <span>Lecture 7<br>Genetic Algorithms</span>
     </a>
-  </li>
-</ul>
+  </div>
+  </div>
+</div>
+ 
 
+<div id="slidesModal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeSlidesModal1()">&times;</span>
+    <h3>Machine Learning (CSE 21816)</h3>
+    <div class="lecture-grid">
+      <a href="slides/ML/Lecture 1.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/L01_ML.png" alt="Lecture 1 ML Basics">
+        <span>Lecture 1<br>ML Basics: PAC Learning, KNN classification</span>
+      </a>
+    
+      <a href="slides/AI/IAI lecture 2_Agents.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/L02_ML.png" alt="Lecture 2 Decision Tree">
+        <span>Lecture 2<br>Decision Tree</span>
+      </a>
+    
+      <a href="slides/AI/IAI lecture 3_Problem Formulation.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/L03_ML.png" alt="Lecture 3 Random Forest, Regression, Logistic Regression">
+        <span>Lecture 3<br>Random Forest, Regression, Logistic Regression</span>
+      </a>
+    
+      <a href="slides/AI/IAI lecture 4_Uninformed Search.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/L04_ML.png" alt="Lecture 4 CNN and RNN">
+        <span>Lecture 4<br>CNN and RNN</span>
+      </a>
+    
+      <a href="slides/AI/Hands On.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/handson.png" alt="Lecture 5 Hands On">
+        <span>Lecture 5<br>Hands On</span>
+      </a>
+    
+      <a href="slides/AI/ML QA.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/QA.png" alt="Lecture 6 Q&A">
+        <span>Lecture 6<br>Q&A</span>
+      </a>
+    
+      <a href="slides/AI/ML lecture notes.pdf" target="_blank" class="lecture-card">
+        <img src="slides/ML/thumbs/notes.png" alt="Lecture Notes">
+        <span>Lecture 7<br>Lecture Notes</span>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -197,8 +232,26 @@ window.onclick = function(event) {
   if (event.target === modal) {
     modal.style.display = "none";
   }
-}
+};
 </script>
+<script>
+function openSlidesModal1() {
+  document.getElementById("slidesModal1").style.display = "block";
+}
+
+function closeSlidesModal1() {
+  document.getElementById("slidesModal1").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal1 = document.getElementById("slidesModal1");
+  if (event.target === modal1) {
+    modal1.style.display = "none";
+  }
+};
+</script>
+
+
 </body>
 <footer class="site-footer">
     <div class="footer-container">

@@ -195,3 +195,35 @@ header {
   margin-bottom: 10px;
 }
 
+.lecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.lecture-card {
+  text-decoration: none;
+  color: #fffdfd;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.lecture-card img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lecture-card:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.lecture-card span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}

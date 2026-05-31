@@ -1,360 +1,167 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Tamal Ghosh | Associate Professor of Computer Science | Adamas University</title>
-    <meta name="description" content="Official academic website of Dr. Tamal Ghosh, Associate Professor in Computer Science & Engineering at Adamas University. Research interests include Artificial Intelligence, Machine Learning, Computer Vision, Optimization Algorithms, and Digital Twin systems.">
-    <meta name="keywords" content="Dr Tamal Ghosh, Tamal Ghosh AI, Adamas University Computer Science, Artificial Intelligence Professor India, Machine Learning Researcher, Computer Vision Faculty, Optimization Algorithms">
-    <meta name="author" content="Dr. Tamal Ghosh">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching - Dr. Tamal Ghosh</title>
+  <meta name="author" content="Dr. Tamal Ghosh">
+  <link rel="stylesheet" href="gtk3-solaris.css">
 </head>
-
 <body>
-    <header>
-        <div class="header-content">
-            <div class="intro">
-			<!-- Row with Clock + Weather -->
-    <div class="info-row" 
-         style="display: flex; justify-content: center; 
-                gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+<div class="cde-taskbar">
+  <div class="cde-logo">SUN WS</div>
+  <div class="cde-taskbar-sep"></div>
+  <span style="font-size:11px;color:var(--tx3);">Dr. Tamal Ghosh - Academic Profile</span>
+  <div class="gtk-infobox cde-taskbar-clock" id="clock">00:00:00</div>
+  <div class="gtk-infobox" id="weather" style="font-size:11px;">Kolkata...</div>
+</div>
 
-      <!-- Clock -->
-      <div id="clock" 
-           style="font-size: 24px; font-family: 'Serif', monospace; 
-                  background: #222; color: #ff4800; padding: 20px; 
-                  border-radius: 10px; text-align: center;">
-        Loading time...
-      </div>
-
-      <!-- Weather -->
-      <div id="weather" 
-           style="font-size: 24px; font-family: 'Serif', monospace; 
-                  background: #222; color: #ff4800; padding: 20px; 
-                  border-radius: 10px; text-align: center;">
-        Loading weather...
-      </div>
-    </div>
-                <h2>Dr. Tamal Ghosh, PostDoc (NTNU, Norway), PhD (JU), B.Tech (CSE, NIT Calicut)</h2>
-                <p>Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor </p>
-                <p>Department of Computer Science & Engineering </p>
-                <p>School of Engineering and Technology</p>
-                <p>Adamas University</p>
-                <p>Email: <a href="mailto:tamal.ghosh1@adamasuniversity.ac.in">tamal.ghosh1@adamasuniversity.ac.in</a></p>
-                
-            </div>
-            <div class="profile-picture">
-                <img src="profile3.jpg" alt="Dr. Tamal Ghosh Associate Professor Computer Science Adamas University">
-            
-                <div class="social-media">
-                    <a href="https://www.linkedin.com/in/tamal-ghosh-ph-d-13454a5b/" class="social-icon"><img src="linkedin.jpg" alt="LinkedIn"></a>
-                    <a href="https://drive.google.com/file/d/1bG1BT6pyPY5fmmiP46SY5Zb_1kTWOQWb/view" class="social-icon"><img src="cv.jpg" alt="CV"></a>
-                    <a href="https://orcid.org/0000-0002-3225-9450" class="social-icon"><img src="orcid.jpg" alt="ORCID"></a>
-                    <a href="" class="social-icon"><img src="researchgate.jpg" alt="ResearchGate"></a>
-                    <a href="https://scholar.google.com/citations?user=vOmC9A0AAAAJ&hl=en" class="social-icon"><img src="googlescholar.jpg" alt="Google Scholar"></a>
-                    <a href="https://www.scopus.com/authid/detail.uri?authorId=52163539500" class="social-icon"><img src="scopus.jpg" alt="Scopus"></a>
-                    <a href="https://www.webofscience.com/wos/author/record/HNQ-0122-2023" class="social-icon"><img src="wos.png" alt="Web of Science"></a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="tab-links">
-            <button onclick="openTab(event, 'about')">
-                <a href="index.html" style="text-decoration: none; color: inherit;">About</a>
-            </button>
-            <button onclick="openTab(event, 'qualifications')">
-                <a href="qualifications.html" style="text-decoration: none; color: inherit;">Qualifications</a>
-            </button>
-            <button onclick="openTab(event, 'teaching')" class="active">
-                    <a href="Teaching.html" style="text-decoration: none; color: inherit;">Teaching</a>
-            </button>
-            <button onclick="openTab(event, 'research')">
-                    <a href="Research.html" style="text-decoration: none; color: inherit;">Research</a>
-            </button>
-            <button onclick="openTab(event, 'publications')">
-                    <a href="Publications.html" style="text-decoration: none; color: inherit;">Publications</a>
-            </button>
-            <button onclick="openTab(event, 'Projects')">
-                    <a href="Projects.html" style="text-decoration: none; color: inherit;">Projects</a>
-            </button>
-            <button onclick="openTab(event, 'miscleneous')">
-                    <a href="misc.html" style="text-decoration: none; color: inherit;">Miscleneous</a>
-                </button>
-        </div>
-
-       
-        <div id="teaching" class="tab-content active">
-            <h2>Teaching</h2>            
-            <p>1. Introduction to Artificial Intelligence (CSE 11112), (B.Tech) Summer 2024, 2025, <a href="#" onclick="openSlidesModal(); return false;"> 2026 </a> </p>
-            <p>2. Machine Learning (CSE 21816), Winter 2023, Summer and Winter 2024, Summer and <a href="#" onclick="openSlidesModal1(); return false;"> Winter 2025 (PhD)</a></p>
-            <p>4. Business Intelligence (CSE11457), Adamas University Kolkata, Fall 2024 (BCA)</p>
-            <p>6. Applied Computing (CSE22845), Adamas University Kolkata, Fall 2024 (M.Tech)</p>
-            <p>7. Introduction to Programming (CSE 11001), Adamas University Kolkata, Summer 2024 (B.Tech)</p>            
-            <p>8. Disruptive Technology Innovation (GEE 11012), Adamas University Kolkata, Summer 2024 (B.Tech)</p>
-            <p>9. Open-Source Software (CSE 102), Adamas University Kolkata, Fall 2023 (BCA)</p>
-            <p>10. Flexible Automation and Artificial Intelligence (TØL 4204), NTNU, Norway, Fall 2021, Fall 2022 (MSc)</p>            
-        </div>
-        
-    </div>
-<script>
-  // Digital Clock
-  function updateClock() {
-    const now = new Date();
-    const timeStr = now.toLocaleTimeString();
-    document.getElementById("clock").textContent = timeStr;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-
-  // Live Weather
-  async function fetchWeather() {
-    const city = "Kolkata,IN";  // Change to your city
-    const apiKey = "e739bc586a5e8b97f5844b552468f47c"; // Replace with OpenWeather API Key
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      if (data.cod === 200) {
-        const temp = data.main.temp.toFixed(1);
-        const desc = data.weather[0].description;
-        document.getElementById("weather").textContent =
-          `${city}: ${temp}°C, ${desc}`;
-      } else {
-        document.getElementById("weather").textContent = "Weather not available";
-      }
-    } catch (error) {
-      document.getElementById("weather").textContent = "Error fetching weather";
-    }
-  }
-  fetchWeather();
-  setInterval(fetchWeather, 600000); // Update every 10 min
-</script> 
-
-<!-- Slides Modal -->
-<div id="slidesModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeSlidesModal()">&times;</span>
-    <div class="lecture-grid">
-
-    <a href="slides/AI/IAI lecture 1_ AI BAsics.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L01_AI_Basics.png" alt="Lecture 1 AI Basics">
-      <span>Lecture 1<br>AI Basics</span>
-    </a>
-  
-    <a href="slides/AI/IAI lecture 2_Agents.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L02_Agents.png" alt="Lecture 2 Agents">
-      <span>Lecture 2<br>Intelligent Agents</span>
-    </a>
-  
-    <a href="slides/AI/IAI lecture 3_Problem Formulation.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L03_Problem_Formulation.png" alt="Lecture 3 Problem Formulation">
-      <span>Lecture 3<br>Problem Formulation</span>
-    </a>
-  
-    <a href="slides/AI/IAI lecture 4_Uninformed Search.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L04_Uninformed_Search.png" alt="Lecture 4 Uninformed Search">
-      <span>Lecture 4<br>Uninformed Search</span>
-    </a>
-  
-    <a href="slides/AI/IAI lecture 5_Informed Search.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L05_Informed_Search.png" alt="Lecture 5 Informed Search">
-      <span>Lecture 5<br>Informed Search</span>
-    </a>
-  
-    <a href="slides/AI/IAI lecture 6_Satisfying Constraints.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L06_CSP.png" alt="Lecture 6 CSP">
-      <span>Lecture 6<br>Constraint Satisfaction</span>
-    </a>
-  
-    <a href="slides/AI/IAI lecture 7_Genetic Algorithm.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L07_GA.png" alt="Lecture 7 GA">
-      <span>Lecture 7<br>Genetic Algorithms</span>
-    </a>
-
-    <a href="slides/AI/IAI lecture 8_Planning Problem and STRIPS.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L08_Planning.png" alt="Lecture 8 Planning">
-      <span>Lecture 8<br>Planning</span>
-    </a>
-
-    <a href="slides/AI/IAI lecture 9_Planning with State-Space Search.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L09_Planning_SSS.png" alt="Lecture 9 Planning with State Space Search">
-      <span>Lecture 9<br>Planning with State Space Search</span>
-    </a>
-
-    <a href="slides/AI/IAI lecture 10_Partial Order Planning.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L10_POP.png" alt="Lecture 10 Partial Order Planning">
-      <span>Lecture 10<br>Partial Order Planning</span>
-    </a>
-
-    <a href="slides/AI/IAI lecture 11_Planning Graph and Planning in Real World.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L11_PG.png" alt="Lecture 11 Planning Graph">
-      <span>Lecture 11<br>Planning Graph</span>
-    </a>
-    <a href="slides/AI/IAI lecture 12_Propositional Logic.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L12_PL.png" alt="Lecture 12 Propositional Logic">
-      <span>Lecture 12<br>Propositional Logic</span>
-    </a>
-    <a href="slides/AI/IAI lecture 13_Inference Rules.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L13_IR.png" alt="Lecture 13 Inference Rules">
-      <span>Lecture 13<br>Inference Rules</span>
-    </a>
-    <a href="slides/AI/IAI lecture 14_First-Order Logic.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L14_FOL.png" alt="Lecture 14 First-Order Logic">
-      <span>Lecture 14<br>First-Order Logic</span>
-    </a>
-    <a href="slides/AI/IAI lecture 15_Inference in First-Order Logic.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L15_IFOL.png" alt="Lecture 15 Inference in First-Order Logic">
-      <span>Lecture 15<br>Inference in First-Order Logic</span>
-    </a>
-    <a href="slides/AI/IAI lecture 16_Unification and Resolution.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L16_UR.png" alt="Lecture 16 Unification and Resolution">
-      <span>Lecture 16<br>Unification and Resolution</span>
-    </a>
-    <a href="slides/AI/IAI lecture 17_Forward and backward chaining.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L17_FBC.png" alt="Lecture 17 Forward and Backward Chaining">
-      <span>Lecture 17<br>Forward and Backward Chaining</span>
-    </a>
-    <a href="slides/AI/IAI lecture 18_Reasoning and Uncertainty.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L18_RU.png" alt="Lecture 18 Reasoning and Uncertainty">
-      <span>Lecture 18<br>Reasoning and Uncertainty</span>
-    </a>
-    <a href="slides/AI/IAI lecture 19_Bayes Theorem.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L19_BT.png" alt="Lecture 19 Bayes Theorem">
-      <span>Lecture 19<br>Bayes Theorem</span>
-    </a>
-    <a href="slides/AI/IAI lecture 20_Markov Chain and Hidden MArkov Model.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L20_HMM.png" alt="Lecture 20 Markov Chain and Hidden MArkov Model">
-      <span>Lecture 20<br>Markov Chain and Hidden MArkov Model</span>
-    </a>
-    <a href="slides/AI/IAI lecture 21_Fuzzy logic and Fuzzy Set Theory.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L21_FL.png" alt="Lecture 21 Fuzzy logic and Fuzzy Set Theory">
-      <span>Lecture 21<br>Fuzzy logic and Fuzzy Set Theory</span>
-    </a>
-    <a href="slides/AI/IAI lecture 22_Learning ML DT.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L22_ML.png" alt="Lecture 22 Learning ML DT">
-      <span>Lecture 22<br>Learning ML DT</span>
-    </a>
-    <a href="slides/AI/IAI lecture 23_ANN.pdf" target="_blank" class="lecture-card">
-      <img src="slides/AI/thumbs/L23_ANN.png" alt="Lecture 23 ANN">
-      <span>Lecture 23<br>ANN</span>
-    </a>
+<div class="gtk-window">
+  <div class="gtk-titlebar">
+    <div class="gtk-titlebar-btns"><div class="gtk-tb-btn">_</div><div class="gtk-tb-btn">[]</div></div>
+    <div class="gtk-titlebar-label">Dr. Tamal Ghosh - Teaching [Teaching.html]</div>
+    <div class="gtk-tb-btn gtk-tb-btn-close">X</div>
   </div>
+  <div class="gtk-menubar">
+    <a href="index.html">About</a>
+    <a href="qualifications.html">Qualifications</a>
+    <a href="Teaching.html" class="active-tab">Teaching</a>
+    <a href="Research.html">Research</a>
+    <a href="Publications.html">Publications</a>
+    <a href="Projects.html">Projects</a>
+    <a href="misc.html">Miscellaneous</a>
+  </div>
+  <div class="gtk-header-pane">
+    <div class="gtk-avatar-frame"><img src="profile3.png" alt="Dr. Tamal Ghosh"></div>
+    <div class="gtk-profile-info">
+      <div class="gtk-prof-name">Dr. Tamal Ghosh</div>
+      <div class="gtk-prof-sub">Associate Professor &nbsp;|&nbsp; Educator &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; NAAC Consultant</div>
+      <div class="gtk-prof-affil">Dept. of CSE, School of Engineering &amp; Technology, Adamas University, Kolkata...</div>
+      <div class="gtk-badge-row">
+        <span class="gtk-badge gtk-badge-warm">PostDoc - NTNU, Norway</span>
+        <span class="gtk-badge gtk-badge-green">PhD - Jadavpur University</span>
+        <span class="gtk-badge gtk-badge-blue">B.Tech CSE - NIT Calicut</span>
+      </div>
+      <div class="gtk-info-row"><div class="gtk-infobox">tamal.ghosh1@adamasuniversity.ac.in</div></div>
+    </div>
+  </div>
+  <div class="gtk-toolbar">
+    <a class="gtk-tool-btn" href="https://www.linkedin.com/in/tamal-ghosh-ph-d-13454a5b/" target="_blank">LinkedIn</a>
+    <a class="gtk-tool-btn" href="https://drive.google.com/file/d/1bG1BT6pyPY5fmmiP46SY5Zb_1kTWOQWb/view" target="_blank">Download CV</a>
+    <a class="gtk-tool-btn" href="https://orcid.org/0000-0002-3225-9450" target="_blank">ORCID</a>
+    <a class="gtk-tool-btn" href="https://scholar.google.com/citations?user=vOmC9A0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a class="gtk-tool-btn" href="https://www.scopus.com/authid/detail.uri?authorId=52163539500" target="_blank">Scopus</a>
+    <a class="gtk-tool-btn" href="https://www.webofscience.com/wos/author/record/HNQ-0122-2023" target="_blank">Web of Science</a>
+  </div>
+  <div class="gtk-paned">
+    <div class="gtk-sidebar">
+      <div class="gtk-tree-head">Sections</div>
+      <a href="index.html" class="gtk-tree-item">  About</a>
+      <a href="qualifications.html" class="gtk-tree-item">  Qualifications</a>
+      <a href="Teaching.html" class="gtk-tree-item active">> Teaching</a>
+      <a href="Research.html" class="gtk-tree-item">  Research</a>
+      <a href="Publications.html" class="gtk-tree-item">  Publications</a>
+      <a href="Projects.html" class="gtk-tree-item">  Projects</a>
+      <a href="misc.html" class="gtk-tree-item">  Miscellaneous</a>
+      <div class="gtk-tree-sep"></div>
+      <div class="gtk-tree-head">Connect</div>
+      <a href="https://www.linkedin.com/in/dr-tamal-ghosh-13454a5b/" class="gtk-tree-item" target="_blank">  LinkedIn</a>
+      <a href="https://www.aucse.in/people/faculty/dr-tamal-ghosh" class="gtk-tree-item" target="_blank">  Institute Page</a>
+      <a href="https://adamasuniversity.irins.org/profile/438955" class="gtk-tree-item" target="_blank">  Vidwan-438955</a>
+    </div>
+    <div class="gtk-content">
+      <div class="gtk-section-title">Courses Taught</div>
+      <div class="gtk-listview">
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">CSE 11112</div>
+          <div class="gtk-listview-col2">Introduction to Artificial Intelligence (B.Tech) - Summer 2024, 2025, 2026 <a href="#" class="slide-contrast" onclick="openModal('aiModal');return false;">Slides</a></div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">CSE 21816</div>
+          <div class="gtk-listview-col2">Machine Learning - Winter 2023, Summer/Winter 2024, Summer/Winter 2025 (PhD) <a href="#" class="slide-contrast" onclick="openModal('mlModal');return false;">Slides</a></div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">CSE11457</div>
+          <div class="gtk-listview-col2">Business Intelligence (BCA) - Fall 2024, Adamas University</div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">CSE22845</div>
+          <div class="gtk-listview-col2">Applied Computing (M.Tech) - Fall 2024, Adamas University</div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">CSE 11001</div>
+          <div class="gtk-listview-col2">Introduction to Programming (B.Tech) - Summer 2024, Adamas University</div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">GEE 11012</div>
+          <div class="gtk-listview-col2">Disruptive Technology Innovation (B.Tech) - Summer 2024, Adamas University</div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">CSE 102</div>
+          <div class="gtk-listview-col2">Open-Source Software (BCA) - Fall 2023, Adamas University</div>
+        </div>
+        <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">TOL 4204</div>
+          <div class="gtk-listview-col2">Flexible Automation and Artificial Intelligence (MSc) - Fall 2021, Fall 2022, NTNU Norway</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gtk-statusbar">
+    <div class="gtk-status-cell">Teaching</div>
+    <div class="gtk-status-cell">8 courses across B.Tech / M.Tech / BCA / PhD / MSc</div>
+    <div class="gtk-status-cell gtk-status-ok">Online</div>
   </div>
 </div>
- 
 
-<div id="slidesModal1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeSlidesModal1()">&times;</span>
-    <h3>Machine Learning (CSE 21816)</h3>
-    <div class="lecture-grid">
-      <a href="slides/ML/Lecture 1.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/L01_ML.png" alt="Lecture 1 ML Basics">
-        <span>Lecture 1<br>ML Basics: PAC Learning, KNN classification</span>
-      </a>
-    
-      <a href="slides/AI/IAI lecture 2_Agents.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/L02_ML.png" alt="Lecture 2 Decision Tree">
-        <span>Lecture 2<br>Decision Tree</span>
-      </a>
-    
-      <a href="slides/AI/IAI lecture 3_Problem Formulation.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/L03_ML.png" alt="Lecture 3 Random Forest, Regression, Logistic Regression">
-        <span>Lecture 3<br>Random Forest, Regression, Logistic Regression</span>
-      </a>
-    
-      <a href="slides/AI/IAI lecture 4_Uninformed Search.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/L04_ML.png" alt="Lecture 4 CNN and RNN">
-        <span>Lecture 4<br>CNN and RNN</span>
-      </a>
-    
-      <a href="slides/AI/Hands On.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/handson.png" alt="Lecture 5 Hands On">
-        <span>Lecture 5<br>Hands On</span>
-      </a>
-    
-      <a href="slides/AI/ML QA.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/QA.png" alt="Lecture 6 Q&A">
-        <span>Lecture 6<br>Q&A</span>
-      </a>
-    
-      <a href="slides/AI/ML lecture notes.pdf" target="_blank" class="lecture-card">
-        <img src="slides/ML/thumbs/notes.png" alt="Lecture Notes">
-        <span>Lecture 7<br>Lecture Notes</span>
-      </a>
+<div class="gtk-window gtk-footer-window">
+  <div class="gtk-titlebar" style="background:var(--title-in);"><div class="gtk-titlebar-label" style="color:#eee;">Footer</div></div>
+  <div class="gtk-footer-body">
+    <div class="gtk-footer-col"><h4>Info</h4><p>Contact: <a href="mailto:dr.tamal.ghosh@outlook.com">dr.tamal.ghosh@outlook.com</a></p><p>Phone: +91-9163253061</p><p>&copy; 2024 Dr. Tamal Ghosh.</p></div>
+    <div class="gtk-footer-col"><h4>Quick Links</h4><li><a href="index.html">About Me</a></li><li><a href="Research.html">Research</a></li><li><a href="Publications.html">Publications</a></li></div>
+    <div class="gtk-footer-col"><h4>Connect</h4><li><a href="https://www.linkedin.com/in/dr-tamal-ghosh-13454a5b/" target="_blank">LinkedIn</a></li><li><a href="https://www.aucse.in/people/faculty/dr-tamal-ghosh" target="_blank">Institute Page</a></li><li><a href="https://adamasuniversity.irins.org/profile/438955" target="_blank">Vidwan-ID: 438955</a></li></div>
+  </div>
+</div>
+
+<!-- AI Slides Modal -->
+<div id="aiModal" class="gtk-modal" onclick="if(event.target===this)closeModal('aiModal')">
+  <div class="gtk-dialog">
+    <div class="gtk-dialog-titlebar">
+      <div class="gtk-titlebar-btns"><div class="gtk-tb-btn">_</div></div>
+      <div class="gtk-titlebar-label">Introduction to Artificial Intelligence (CSE 11112) - Lecture Slides</div>
+      <div class="gtk-dialog-close" onclick="closeModal('aiModal')">X</div>
+    </div>
+    <div class="gtk-dialog-body">
+      <div class="gtk-lecture-grid" id="aiGrid"></div>
     </div>
   </div>
 </div>
 
-<script>
-function openSlidesModal() {
-  document.getElementById("slidesModal").style.display = "block";
-}
+<!-- ML Slides Modal -->
+<div id="mlModal" class="gtk-modal" onclick="if(event.target===this)closeModal('mlModal')">
+  <div class="gtk-dialog">
+    <div class="gtk-dialog-titlebar">
+      <div class="gtk-titlebar-btns"><div class="gtk-tb-btn">_</div></div>
+      <div class="gtk-titlebar-label">Machine Learning (CSE 21816) - Lecture Slides</div>
+      <div class="gtk-dialog-close" onclick="closeModal('mlModal')">X</div>
+    </div>
+    <div class="gtk-dialog-body">
+      <div class="gtk-lecture-grid" id="mlGrid"></div>
+    </div>
+  </div>
+</div>
 
-function closeSlidesModal() {
-  document.getElementById("slidesModal").style.display = "none";
-}
-
-window.onclick = function(event) {
-  const modal = document.getElementById("slidesModal");
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-</script>
-<script>
-function openSlidesModal1() {
-  document.getElementById("slidesModal1").style.display = "block";
-}
-
-function closeSlidesModal1() {
-  document.getElementById("slidesModal1").style.display = "none";
-}
-
-window.onclick = function(event) {
-  const modal1 = document.getElementById("slidesModal1");
-  if (event.target === modal1) {
-    modal1.style.display = "none";
-  }
-};
-</script>
-
-
+<script src="gtk-common.js"></script>
 </body>
-<footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>About</h3>
-        <p>Page Counter: <span id="page-counter">0</span></p>
-        <p>Contact: <a href="mailto:dr.tamal.ghosh@outlook.com">dr.tamal.ghosh@outlook.com</a> </p>
-        <p>Phone: +91-9163253061</p>
-        <p>&copy; 2024 Dr. Tamal Ghosh. All rights reserved.</p>
-      </div>
-  
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-links">
-        <h3>Connect</h3>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/dr-tamal-ghosh-13454a5b/">LinkedIn</a></li>
-        <li><a href="https://www.aucse.in/people/faculty/dr-tamal-ghosh"></i>Institute Page</a></li>
-        <li><a href="https://adamasuniversity.irins.org/profile/438955"></i>Vidwan-ID : 438955</a></li>
-      </ul>
-    </div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-    <script src="page-counter.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+

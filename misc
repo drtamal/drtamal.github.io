@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Tamal Ghosh — Academic Profile [drtamal.github.io]</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Solaris / CDE GTK3 palette ── */
+    :root {
+      --desk:    #3a6ea5;
+      --desk2:   #2d5a8e;
+      --win-bg:  #d4c9b0;
+      --win-bg2: #c8bc9c;
+      --win-bg3: #bfb28a;
+      --title-a: #4a7ab5;
+      --title-b: #1a3a6a;
+      --title-tx:#ffffff;
+      --panel:   #c0b49a;
+      --panel2:  #b0a48a;
+      --raised-hi: #e8ddc8;
+      --raised-sh: #8a7e6a;
+      --tx:      #000000;
+      --tx2:     #222222;
+      --tx3:     #4a4a4a;
+      --sel-bg:  #4a7ab5;
+      --sel-tx:  #ffffff;
+      --btn-face:#cdc1a8;
+      --btn-hi:  #e0d4bc;
+      --btn-sh:  #8a7e68;
+      --entry:   #f5f0e4;
+      --link:    #00008b;
+      --accent:  #8b4513;
+      --warn:    #cc6600;
+      --ok:      #2d6a2d;
+    }
+
+    body { background: var(--desk); font-family: 'Helvetica', 'Arial', sans-serif; }
+    .desktop { font-size: 13px; color: var(--tx); padding: 8px; }
+
+    /* ── CDE Taskbar ── */
+    .taskbar { background: var(--panel); border-top: 2px solid var(--raised-hi); border-left: 2px solid var(--raised-hi); border-right: 2px solid var(--raised-sh); border-bottom: 2px solid var(--raised-sh); display: flex; align-items: center; gap: 2px; padding: 3px 6px; margin-bottom: 6px; }
+    .taskbar-icon { font-size: 10px; padding: 2px 10px; background: var(--btn-face); border-top: 2px solid var(--btn-hi); border-left: 2px solid var(--btn-hi); border-right: 2px solid var(--btn-sh); border-bottom: 2px solid var(--btn-sh); color: var(--tx); cursor: pointer; white-space: nowrap; font-weight: bold; }
+    .taskbar-icon:active { border-top: 2px solid var(--btn-sh); border-left: 2px solid var(--btn-sh); border-right: 2px solid var(--btn-hi); border-bottom: 2px solid var(--btn-hi); }
+    .taskbar-sep { width: 1px; background: var(--raised-sh); height: 20px; margin: 0 4px; }
+    .taskbar-clock { margin-left: auto; font-size: 11px; color: var(--tx); background: var(--entry); border: 1px inset var(--btn-sh); padding: 2px 8px; font-family: monospace; }
+    .taskbar-logo { font-size: 11px; font-weight: bold; color: var(--title-b); background: var(--panel2); padding: 2px 8px; border-top: 2px solid var(--raised-hi); border-left: 2px solid var(--raised-hi); border-right: 2px solid var(--raised-sh); border-bottom: 2px solid var(--raised-sh); }
+
+    /* ── Window chrome ── */
+    .window { background: var(--win-bg); border-top: 2px solid var(--raised-hi); border-left: 2px solid var(--raised-hi); border-right: 3px solid var(--raised-sh); border-bottom: 3px solid var(--raised-sh); margin-bottom: 8px; }
+    .titlebar { background: var(--title-a); display: flex; align-items: center; gap: 0; padding: 0; height: 22px; }
+    .titlebar-btns { display: flex; }
+    .tb-btn { width: 18px; height: 22px; background: var(--btn-face); border-right: 1px solid var(--raised-sh); border-top: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; color: var(--tx); font-weight: bold; flex-shrink: 0; }
+    .tb-btn:hover { background: var(--btn-hi); }
+    .titlebar-label { flex: 1; text-align: center; font-size: 11px; font-weight: bold; color: var(--title-tx); letter-spacing: 0.04em; padding: 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .tb-btn-right { border-right: none; border-left: 1px solid var(--raised-sh); }
+
+    /* ── Menu bar ── */
+    .menubar { background: var(--panel); border-bottom: 1px solid var(--raised-sh); display: flex; padding: 1px 4px; }
+    .menu-item { font-size: 12px; padding: 2px 10px; cursor: pointer; color: var(--tx); }
+    .menu-item:hover { background: var(--sel-bg); color: var(--sel-tx); }
+
+    /* ── Content area ── */
+    .win-body { padding: 0; }
+
+    /* ── Hero / Profile pane ── */
+    .profile-pane { display: flex; gap: 12px; padding: 12px; background: var(--win-bg); border-bottom: 2px solid var(--raised-sh); align-items: flex-start; }
+    .avatar-frame { border-top: 2px solid var(--raised-sh); border-left: 2px solid var(--raised-sh); border-right: 2px solid var(--raised-hi); border-bottom: 2px solid var(--raised-hi); padding: 2px; background: var(--win-bg3); flex-shrink: 0; }
+    .avatar-frame img { width: 80px; height: 80px; display: block; object-fit: cover; }
+    .profile-info { flex: 1; }
+    .prof-name { font-size: 15px; font-weight: bold; color: var(--title-b); margin-bottom: 2px; }
+    .prof-role { font-size: 11px; color: var(--tx3); margin-bottom: 3px; }
+    .prof-affil { font-size: 11px; color: var(--tx2); margin-bottom: 8px; }
+
+    /* ── Toolbar buttons (social links) ── */
+    .toolbar { background: var(--panel); border-bottom: 1px solid var(--raised-sh); padding: 3px 6px; display: flex; gap: 3px; flex-wrap: wrap; }
+    .tool-btn { font-size: 11px; padding: 2px 10px; background: var(--btn-face); border-top: 2px solid var(--btn-hi); border-left: 2px solid var(--btn-hi); border-right: 2px solid var(--btn-sh); border-bottom: 2px solid var(--btn-sh); color: var(--tx); cursor: pointer; text-decoration: none; display: inline-block; }
+    .tool-btn:hover { background: var(--btn-hi); }
+
+    /* ── Paned layout ── */
+    .paned { display: grid; grid-template-columns: 155px 1fr; gap: 0; }
+
+    /* ── Sidebar (file manager tree style) ── */
+    .sidebar { background: var(--win-bg2); border-right: 2px solid var(--raised-sh); padding: 4px 0; }
+    .tree-head { font-size: 10px; font-weight: bold; color: var(--tx3); padding: 4px 8px 2px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--raised-sh); margin-bottom: 2px; background: var(--panel); }
+    .tree-item { font-size: 12px; color: var(--tx); padding: 3px 8px 3px 18px; cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; }
+    .tree-item:hover { background: var(--sel-bg); color: var(--sel-tx); }
+
+    /* ── Content panel ── */
+    .content { padding: 10px 14px; background: var(--win-bg); max-height: 70vh; overflow-y: auto; }
+    .sec-label { font-size: 11px; font-weight: bold; color: var(--title-b); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; padding-bottom: 3px; border-bottom: 2px solid var(--title-a); margin-top: 15px; }
+    .sec-label:first-child { margin-top: 0; }
+    .body-text { font-size: 12px; color: var(--tx2); line-height: 1.7; margin-bottom: 12px; }
+    
+    /* ── Qual list & Paper list ── */
+    .list-box { border: 2px solid var(--raised-sh); border-top-color: var(--raised-hi); border-left-color: var(--raised-hi); margin-bottom: 12px; }
+    .list-row { display: flex; gap: 8px; padding: 5px 6px; border-bottom: 1px solid var(--win-bg3); font-size: 12px; align-items: flex-start; line-height: 1.55; color: var(--tx2); }
+    .list-row:nth-child(odd) { background: var(--win-bg2); }
+    .col-title { font-weight: bold; color: var(--accent); width: 110px; flex-shrink: 0; font-size: 11px; padding-top: 1px; }
+    .col-desc { color: var(--tx); flex: 1; }
+    .col-sub { font-size: 11px; color: var(--tx3); font-style: italic; }
+
+    /* ── Research tags ── */
+    .ri-grid { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+    .ri-tag { font-size: 11px; padding: 2px 9px; background: var(--btn-face); border-top: 1px solid var(--raised-hi); border-left: 1px solid var(--raised-hi); border-right: 1px solid var(--raised-sh); border-bottom: 1px solid var(--raised-sh); color: var(--tx2); }
+
+    /* ── Status bar ── */
+    .statusbar { background: var(--panel); border-top: 2px solid var(--raised-sh); display: flex; align-items: center; padding: 2px 8px; gap: 8px; }
+    .status-cell { font-size: 11px; color: var(--tx); padding: 1px 8px; background: var(--entry); border: 1px solid var(--raised-sh); border-top: 1px solid var(--raised-hi); font-family: monospace; }
+    .status-ok { color: var(--ok); font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<div class="desktop">
+
+  <div class="taskbar">
+    <div class="taskbar-logo">SUN WS</div>
+    <div class="taskbar-sep"></div>
+    <div class="taskbar-icon">File Manager</div>
+    <div class="taskbar-icon">Terminal</div>
+    <div class="taskbar-icon">Text Editor</div>
+    <div class="taskbar-sep"></div>
+    <div class="taskbar-icon">drtamal.github.io</div>
+    <div class="taskbar-clock" id="taskbar-clock">Loading time...</div>
+  </div>
+
+  <div class="window">
+    <div class="titlebar">
+      <div class="titlebar-btns">
+        <div class="tb-btn">_</div>
+        <div class="tb-btn">[]</div>
+      </div>
+      <div class="titlebar-label">Dr. Tamal Ghosh — Unified Academic Profile [drtamal.github.io]</div>
+      <div class="tb-btn tb-btn-right">X</div>
+    </div>
+    <div class="menubar">
+      <div class="menu-item">File</div>
+      <div class="menu-item">Edit</div>
+      <div class="menu-item">View</div>
+      <div class="menu-item">Navigate</div>
+      <div class="menu-item">Help</div>
+    </div>
+
+    <div class="profile-pane">
+      <div class="avatar-frame">
+        <img src="profile3.jpg" alt="Dr. Tamal Ghosh">
+      </div>
+      <div class="profile-info">
+        <div class="prof-name">Dr. Tamal Ghosh, PostDoc (NTNU, Norway), PhD (JU), B.Tech (CSE, NIT Calicut)[cite: 2]</div>
+        <div class="prof-role">Associate Professor | Educator | Researcher | NAAC Consultant | Counsilor[cite: 2]</div>
+        <div class="prof-affil">Department of Computer Science & Engineering, School of Engineering and Technology, Adamas University[cite: 2]</div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <a class="tool-btn" href="https://www.linkedin.com/in/tamal-ghosh-ph-d-13454a5b/">LinkedIn</a>
+      <a class="tool-btn" href="https://drive.google.com/file/d/1bG1BT6pyPY5fmmiP46SY5Zb_1kTWOQWb/view">Download CV</a>
+      <a class="tool-btn" href="https://orcid.org/0000-0002-3225-9450">ORCID</a>
+      <a class="tool-btn" href="">ResearchGate</a>
+      <a class="tool-btn" href="https://scholar.google.com/citations?user=vOmC9A0AAAAJ&hl=en">Google Scholar</a>
+      <a class="tool-btn" href="https://www.scopus.com/authid/detail.uri?authorId=52163539500">Scopus</a>
+      <a class="tool-btn" href="https://www.webofscience.com/wos/author/record/HNQ-0122-2023">Web of Science</a>
+    </div>
+
+    <div class="paned win-body">
+      <div class="sidebar">
+        <div class="tree-head">Navigation Tree</div>
+        <a href="#about" class="tree-item">About</a>
+        <a href="#qualifications" class="tree-item">Qualifications</a>
+        <a href="#teaching" class="tree-item">Teaching</a>
+        <a href="#research" class="tree-item">Research</a>
+        <a href="#publications" class="tree-item">Publications</a>
+        <a href="#projects" class="tree-item">Projects</a>
+        <a href="#miscellaneous" class="tree-item">Miscellaneous</a>
+      </div>
+
+      <div class="content">
+        
+        <!-- ABOUT SECTION -->
+        <div id="about" class="sec-label">About</div>
+        <div class="body-text">
+          I am an Artificial Intelligence Researcher, currently working as an Associate Professor of Computer Science and Engineering at Adamas University, Kolkata[cite: 2]. My academic and research journey spans over two decades across India and Europe, with expertise in artificial intelligence, soft computing, and data-driven optimization algorithms (NSO, PSO, GWO)[cite: 2]. I have spent many years abroad[cite: 2]. I have held several research positions at the Norwegian University of Science and Technology (NTNU), Norway contributing to pioneering projects in cyber-physical systems, Computer Vision & Digital Twin Systems, and industrial AI[cite: 2].<br><br>
+          My core interests lie in nature-inspired algorithms, surrogate-assisted optimization, and intelligent manufacturing systems[cite: 2]. I have published extensively in high-impact journals and conferences, and I actively supervise PhD scholars in cutting-edge domains such as prompt engineering and reinforcement learning[cite: 2].<br><br>
+          I have also served as a NAAC coordinator and played key academic roles in curriculum development, international collaborations, and quality assurance[cite: 2]. As a recognized reviewer and editorial contributor, I continue to support the scholarly community[cite: 2]. My research has been backed by international grants, and I have led proposals in digital transformation for industries ranging from automotive to food processing[cite: 2]. I am committed to bridging academia and industry through innovation, digital intelligence, and sustainable technology[cite: 2].
+        </div>
+
+        <!-- QUALIFICATIONS SECTION -->
+        <div id="qualifications" class="sec-label">Qualifications</div>
+        <div class="list-box">
+          <div class="list-row"><span class="col-title">Ph.D.</span><div class="col-desc">(Engineering), Jadavpur University[cite: 6]</div></div>
+          <div class="list-row"><span class="col-title">M.Tech</span><div class="col-desc">(Industrial Engineering & Management), West Bengal University of Technology[cite: 6]</div></div>
+          <div class="list-row"><span class="col-title">B.Tech</span><div class="col-desc">(Computer Science & Engineering), National Institute of Technology Calicut[cite: 6]</div></div>
+        </div>
+
+        <!-- TEACHING SECTION -->
+        <div id="teaching" class="sec-label">Teaching</div>
+        <div class="body-text">
+          1. Introduction to Artificial Intelligence (CSE 11112), (B.Tech) Summer 2024, 2025, 2026[cite: 9]<br>
+          2. Machine Learning (CSE 21816), Winter 2023, Summer and Winter 2024, Summer and Winter 2025 (PhD)[cite: 9]<br>
+          4. Business Intelligence (CSE11457), Adamas University Kolkata, Fall 2024 (BCA)[cite: 9]<br>
+          6. Applied Computing (CSE22845), Adamas University Kolkata, Fall 2024 (M.Tech)[cite: 9]<br>
+          7. Introduction to Programming (CSE 11001), Adamas University Kolkata, Summer 2024 (B.Tech)[cite: 9]<br>
+          8. Disruptive Technology Innovation (GEE 11012), Adamas University Kolkata, Summer 2024 (B.Tech)[cite: 9]<br>
+          9. Open-Source Software (CSE 102), Adamas University Kolkata, Fall 2023 (BCA)[cite: 9]<br>
+          10. Flexible Automation and Artificial Intelligence (TØL 4204), NTNU, Norway, Fall 2021, Fall 2022 (MSc)[cite: 9]
+        </div>
+
+        <!-- RESEARCH SECTION -->
+        <div id="research" class="sec-label">Research Interests</div>
+        <div class="ri-grid">
+          <span class="ri-tag">Artificial Intelligence[cite: 7]</span>
+          <span class="ri-tag">Evolutionary Computing[cite: 7]</span>
+          <span class="ri-tag">Surrogate-Assisted Optimization[cite: 7]</span>
+          <span class="ri-tag">Collaborative Machine Learning and Deep Learning[cite: 7]</span>
+          <span class="ri-tag">Industry 4.0[cite: 7]</span>
+          <span class="ri-tag">Digital Twin[cite: 7]</span>
+        </div>
+        
+        <div class="body-text" style="font-weight: bold; color: var(--accent);">
+          I am actively seeking PhD or PG students who is looking to do cutting-edge research in the above areas.[cite: 7]
+        </div>
+
+        <div class="sec-label">Research Scholars</div>
+        <div class="list-box">
+          <div class="list-row"><span class="col-title">Mr. Kamal Paul</span><div class="col-desc">(PhD Scholar), Adamas University<br><span class="col-sub">Topic: Optimal Prompt Engineering[cite: 7]</span></div></div>
+          <div class="list-row"><span class="col-title">Mr. Nilay Nag</span><div class="col-desc">(PhD Scholar), Adamas University<br><span class="col-sub">Topic: Object localisation and ML application[cite: 7]</span></div></div>
+          <div class="list-row"><span class="col-title">Mr. Arpan Maity</span><div class="col-desc">(M.Tech Scholar), Adamas University<br><span class="col-sub">Topic: Object Detection using Modified CNN[cite: 7]</span></div></div>
+        </div>
+
+        <div class="sec-label">In-Pipeline Papers</div>
+        <div class="list-box">
+          <div class="list-row"><div class="col-desc">A Maity, S Dalapati, S S Shorna, R Pal, K Paul, T Ghosh. Fuzzy-Enhanced Genetic and Swarm Optimization for Efficient Cloud Task Scheduling, <span class="col-sub">CIACON 2026 Durgapur[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">A Maity, S Golder, D Dutta, K Paul, T Ghosh. BdSL-82: A Unified Multi-View Video Dataset for Bengali Sign Language Recognition, <span class="col-sub">CIACON 2026 Durgapur[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">K Paul, T Ghosh, S Saha, A Basu, S Golder. A Multi-Stage Prompt Structuring and Optimization Pipeline for Domain-Specific Large Language Models, <span class="col-sub">Int. J. of Computational Science and Engineering[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">K Paul, A Basu, T Ghosh, S Saha. An Intelligent OCR-to-QA Pipeline with Semantic Chunking and Vector Retrieval, <span class="col-sub">CIACON 2026 Durgapur[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">D Mukherjee, S Manna, M Chakrabortty, L Shaw, D Keshari, K Paul, T Ghosh. Context-Aware Smart Grid Energy Forecasting Using Distilled Large Language Models and Multimodal Learning, <span class="col-sub">Advanced Engineering Informatics, Elsevier[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">K Paul, T Ghosh, S Saha, S Golder, D Dutta, S Bhowmick, S Dasgupta. Camouflage Optimization Algorithm: An adaptive Evolutionary Framework for Optimization Problem Solving. <span class="col-sub">Soft Computing, Springer[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, K Paul. A Resilient Distributed Learning Framework for Perishable Demand Forecasting with High Fault Tolerance and Privacy Assurance. <span class="col-sub">International Journal of System Assurance Engineering and Management, Springer[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, PK Dan. A Digital Twin-driven Near-Zero-Error Healthcare System for Enhanced Patient Safety and Services, <span class="col-sub">Int. J. of Advanced Operations Management, InderScience[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">A Maity, T Ghosh. Hybrid AI Model Combining K-Means++ and YOLOv5 for Surface Anomaly Detection. <span class="col-sub">IAENG International Journal of Computer Science[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">A Maity, T Ghosh, PK Dan. Interpretable Hybrid Feature Fusion with PSO-XGBoost for Metal Defect Classification, <span class="col-sub">Int. J. of Signal and Imaging Systems Engineering, InderScience[cite: 7]</span></div></div>
+          <div class="list-row"><div class="col-desc">A Maity, T Ghosh. Attention-Enhanced VAE for Unified Reconstruction and Classification on Small and Imbalanced Medical Datasets, <span class="col-sub">Neural Computing and Applications, springer[cite: 7]</span></div></div>
+        </div>
+
+        <!-- PUBLICATIONS SECTION -->
+        <div id="publications" class="sec-label">Select Peer-Reviewed Publications</div>
+        <div class="list-box">
+          <div class="list-row"><div class="col-desc">D Bhattacharjee, T Ghosh, PK Dan, (2026). Heuristic Cell Formation via Spatial Design of Utilization Patterns, <span class="col-sub">OPSEARCH. (Accepted) (Impact Factor: 1.8)[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, PK Dan, (2026). Data-Driven Optical Quality Inspection and Optimization within Automated Manufacturing Processes, <span class="col-sub">iMECH Part B: Journal of Engineering Manufacture. (Accepted) (Impact Factor: 1.9)[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, (2025). “Development and Validation of an Optical Surface Quality Metric for Product Inspection”, <span class="col-sub">International Journal of Quality Engineering and Technology[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">D Bhattacharjee, S Mandol, T Ghosh, (2025). “Meta-model-based optimization of rule-based energy management in second-hand plug-in hybrid electric vehicles”, <span class="col-sub">Data Science and Management[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh and K Martinsen. (2021). A Collaborative Beetle Antennae Search Algorithm Using Memory Based Adaptive Learning. <span class="col-sub">Applied Artificial Intelligence, 35(6), pp. 440-475[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, Y Wang, K Martinsen and K Wang. (2020). A Surrogate-Assisted Optimization Approach for Multi-Response End Milling of Aluminium Alloy AA3105, <span class="col-sub">International Journal of Advanced Manufacturing Technology, 111, pp. 2419–2439[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, K Martinsen and PK Dan, (2019). Development and Correlation Analysis of Non-Dominated Sorting Buffalo Optimization NSBUF II Using Taguchi's Design Coupled Gray Relational Analysis and ANN, <span class="col-sub">Applied Soft Computing, 85, 105809[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh and K Martinsen. (2019). CFNN-PSO: An Iterative Predictive Model for Generic Parametric Design of Machining Processes, <span class="col-sub">Applied Artificial Intelligence, 33(11), 951-978[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">T Ghosh, B Doloi and PK Dan. (2016). Applying soft-computing techniques in solving dynamic multi-objective layout problems in cellular manufacturing system, <span class="col-sub">International Journal of Advanced Manufacturing Technology, 86(1), pp.237-257[cite: 5]</span></div></div>
+        </div>
+        
+        <div class="sec-label">Select Peer-Reviewed Conferences</div>
+        <div class="list-box">
+          <div class="list-row"><div class="col-desc">K Paul; A Basu; T Ghosh; S Saha, (2026). Improved Prompt Generation Framework using Gemma-3-based Context-Aware Language Models, <span class="col-sub">SIGNASS 2026, NIT JIS[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">A Maity, J Hore, P Das, J Pal, T Ghosh, (2026). “Palm Line Segmentation Using SAGMS-UNet”, <span class="col-sub">ICDMAI Kolkata-2026[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">DK Kundu, T Ghosh, PK Dan, (2025). Designing a Voice-Controlled AI-Based Cobot Arm for Surgical Assistance, <span class="col-sub">40th INDIAN ENGINEERING CONGRESS 2025[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">A Maity, T Ghosh, (2025). Enhanced Surface Defect Detection Using a Modified KMeans-Assisted YOLOv5 Algorithm for Anchor Box Optimization, <span class="col-sub">2nd ICDDA 2025, Assam Kaziranga University[cite: 5]</span></div></div>
+        </div>
+
+        <div class="sec-label">Book Chapters & Preprints</div>
+        <div class="list-box">
+          <div class="list-row"><div class="col-desc">PK Dan, T Ghosh and S Sengupta. (2012). Application of Soft-Computing Methods in Cellular Manufacturing, <span class="col-sub">Computational Methods for Optimizing Manufacturing Technology: Models and Techniques, IGI-Global[cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">S. Singh, and T. Ghosh. (2025). “Bio-inspired Neuron Synapse Optimization for adaptive learning and smart decision-making”, <span class="col-sub">ArXiv [Cs.NE][cite: 5]</span></div></div>
+          <div class="list-row"><div class="col-desc">A. Maity, and T. Ghosh. (2025). “Comparative analysis of object detection algorithms for surface defect detection”, <span class="col-sub">ArXiv [Cs.CV][cite: 5]</span></div></div>
+        </div>
+
+        <!-- PROJECTS SECTION -->
+        <div id="projects" class="sec-label">Projects</div>
+        <div class="body-text">
+          I have worked in various research projects at the Norwegian University of Science and Technology from 2018-2023[cite: 4]. I had a close collaboration with companies in Raufoss Industry Park at the Vestre Toten municipality in Norway including SINTEF Manufacturing AS[cite: 4]. My research group was Digital Technologies[cite: 4].<br><br>
+          I was also a researcher of SFI Manufacturing at the Norwegian University of Science and Technology (NTNU)[cite: 4]. It was a developed as a CoE of Manufacturing and Automation[cite: 4]. My project work was related to the development of a vision-based quality inspection system for the Cyber-Physical System (CP) Learning Factory[cite: 4]. This work had a collaboration with SINTEF Manufacturing AS Norway[cite: 4]. I dealt with big data inside the CP factory and used ML/AI to predict/maintain the system's performance[cite: 4].<br><br>
+          During my postdoc days at Norway I also had collaborative research work with researchers from IIT Kharagpur, the work was based on the Multi-objective optimization of the powertrain of EV[cite: 4].<br><br>
+          I am also an expert researcher in building mathematical models to aid Decision-Support Systems and Multi-Criteria Decision-Making tools[cite: 4]. I have prior expertise in developing and implementing evolutionary algorithms, nature-inspired optimization, and deep learning tools and techniques[cite: 4].
+        </div>
+        <div class="sec-label">Focused Research Area</div>
+        <div class="body-text">
+          • ML-assisted Evolutionary and Nature-Inspired Optimization Application[cite: 4]<br>
+          • Machine Learning and Big Data Analytics in the context of Industry 4.0[cite: 4]<br>
+          • Digitalization of Production, Industrial IoT and Cyber-Physical Systems within Industry 4.0[cite: 4]<br>
+          • Sensor-based IoT applications to create low-cost smart devices[cite: 4]
+        </div>
+
+        <!-- MISCELLANEOUS SECTION -->
+        <div id="miscellaneous" class="sec-label">Miscellaneous</div>
+        <div class="body-text">Journals to be considered worth in my work area[cite: 3]:</div>
+        <div style="border: 2px solid var(--raised-sh); border-top-color: var(--raised-hi); border-left-color: var(--raised-hi); padding: 2px; background: #fff;">
+          <iframe src="ABDCABS.pdf" width="100%" height="400" style="border: none;"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="statusbar">
+      <div class="status-cell">tamal.ghosh1@adamasuniversity.ac.in</div>
+      <div class="status-cell">+91-9163253061</div>
+      <div class="status-cell">© 2024 Dr. Tamal Ghosh</div>
+      <div class="status-cell status-ok">● Online</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Simple clock updating function for the CDE taskbar to reflect current location requested
+  function updateRetroClock() {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+    document.getElementById("taskbar-clock").textContent = "North Dumdum · " + timeStr + " IST";
+  }
+  setInterval(updateRetroClock, 1000);
+  updateRetroClock();
+</script>
+</body>
+</html>

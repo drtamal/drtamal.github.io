@@ -778,3 +778,30 @@ a[href$=".pdf"]:hover {
   grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
   gap: 10px;
 }
+
+.gtk-update-box {
+    width: 350px;       /* adjust width */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid #57b9d2;
+    padding: 8px 0;
+    background: #123434;
+}
+
+.scroll-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 18s linear infinite;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

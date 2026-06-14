@@ -805,3 +805,70 @@ a[href$=".pdf"]:hover {
         transform: translateX(-100%);
     }
 }
+
+/* Lecture Grid */
+.gtk-lecture-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(210px,1fr));
+    gap:14px;
+    padding:16px;
+    align-items:start;
+}
+
+/* Lecture Card */
+.lecture-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    background:rgba(255,255,255,0.04);
+    border:1px solid #89d8e7;
+    text-decoration:none;
+    color:#d6e6e6;
+
+    padding:12px;
+    min-height:240px;
+    box-sizing:border-box;
+
+    overflow:hidden;
+    transition:transform .15s ease;
+}
+
+.lecture-card:hover{
+    transform:translateY(-2px);
+}
+
+/* Thumbnail */
+.lecture-card img{
+    width:180px;
+    height:130px;
+    object-fit:contain;
+    background:#fff;
+    border:1px solid #cfcfcf;
+    display:block;
+    margin-bottom:10px;
+}
+
+/* Text */
+.lecture-card span{
+    display:block;
+    text-align:center;
+
+    width:100%;
+    font-size:14px;
+    line-height:1.35;
+
+    white-space:normal;
+    overflow-wrap:break-word;
+    word-break:break-word;
+
+    color:#dfeeee;
+}
+
+/* Modal body scrolling */
+.gtk-dialog-body{
+    max-height:75vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+}

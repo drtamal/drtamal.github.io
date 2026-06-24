@@ -194,6 +194,16 @@
 </div>
 
 <script src="gtk-common.js"></script>
+
+<script>
+fetch('https://api.countapi.xyz/hit/drtamal.github.io/home')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('page-counter').textContent = data.value;
+    document.getElementById('footer-counter').textContent = data.value;
+});
+</script>
+
 </body>
 </html>
 

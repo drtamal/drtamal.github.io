@@ -1,0 +1,196 @@
+/* ===========================================================
+   Synthwave / Vaporwave layer  —  load AFTER gtk3-solaris.css
+   Two controls:
+     palette  ->  <html data-sw="miami|outrun|pastel|cyber">
+     mode     ->  <html data-theme="dark|light">   (dark = default look)
+   =========================================================== */
+
+/* ===================== DARK PALETTES (default) ===================== */
+:root, :root[data-sw="miami"] {
+  --accent:#ff2e97; --accent-2:#23e0ff; --ok:#3bffb0; --focus:#23e0ff;
+  --ink-0:#f7f0ff; --ink-1:#e7d9ff; --ink-2:#b69ad8;
+  --line:#ff2e97; --panel:rgba(40,12,64,.6); --panel-2:rgba(40,12,64,.6);
+  --sw-bg-top:#2b0a4d; --sw-bg-mid:#5a1166; --sw-bg-low:#c4156b; --sw-bg-bottom:#ff7e4d;
+  --sw-window:rgba(26,11,46,.62);
+  --sw-sun:rgba(255,210,120,.55);
+  --sw-name-1:#ffffff; --sw-name-2:#ffd2f0; --sw-name-3:#23e0ff;
+}
+:root[data-sw="outrun"] {
+  --accent:#ff2d6f; --accent-2:#ffa23a; --ok:#ffd36a; --focus:#ffa23a;
+  --ink-0:#ffeede; --ink-1:#f3d9c9; --ink-2:#d8a98f;
+  --line:#ff2d6f; --panel:rgba(28,8,52,.6); --panel-2:rgba(28,8,52,.6);
+  --sw-bg-top:#1a0738; --sw-bg-mid:#4a1063; --sw-bg-low:#b3185f; --sw-bg-bottom:#ff6a3d;
+  --sw-window:rgba(28,8,52,.62);
+  --sw-sun:rgba(255,180,90,.6);
+  --sw-name-1:#ffffff; --sw-name-2:#ffd8a8; --sw-name-3:#ff7eb3;
+}
+:root[data-sw="pastel"] {
+  --accent:#ff8fce; --accent-2:#7fe9ff; --ok:#9bffd6; --focus:#7fe9ff;
+  --ink-0:#fff4ff; --ink-1:#ead9f5; --ink-2:#c3aede;
+  --line:#ff8fce; --panel:rgba(70,50,110,.5); --panel-2:rgba(70,50,110,.5);
+  --sw-bg-top:#5b5fd6; --sw-bg-mid:#9b6fd0; --sw-bg-low:#e58fc0; --sw-bg-bottom:#ffd6c0;
+  --sw-window:rgba(58,42,96,.55);
+  --sw-sun:rgba(255,224,184,.5);
+  --sw-name-1:#ffffff; --sw-name-2:#ffe3f3; --sw-name-3:#b6f0ff;
+}
+:root[data-sw="cyber"] {
+  --accent:#2b6bff; --accent-2:#2bff9e; --ok:#2bff9e; --focus:#2bff9e;
+  --ink-0:#eaf6ff; --ink-1:#c9def0; --ink-2:#86a9c8;
+  --line:#2b6bff; --panel:rgba(8,16,40,.6); --panel-2:rgba(8,16,40,.6);
+  --sw-bg-top:#050913; --sw-bg-mid:#0a1330; --sw-bg-low:#122a5c; --sw-bg-bottom:#1f6f8f;
+  --sw-window:rgba(8,16,40,.62);
+  --sw-sun:rgba(120,200,255,.45);
+  --sw-name-1:#ffffff; --sw-name-2:#bfeaff; --sw-name-3:#2bff9e;
+}
+
+/* ===================== LIGHT PALETTES (daytime vaporwave) ===================== */
+:root[data-theme="light"][data-sw="miami"], :root[data-theme="light"]:not([data-sw]) {
+  --accent:#e3197f; --accent-2:#0aa7c8;
+  --ink-0:#42114a; --ink-1:#5e2a64; --ink-2:#8a5a86;
+  --line:#e3197f; --panel:rgba(255,255,255,.6); --panel-2:rgba(255,255,255,.6);
+  --sw-bg-top:#ffe3f2; --sw-bg-mid:#ffd1ea; --sw-bg-low:#cfe2ff; --sw-bg-bottom:#ffe9cf;
+  --sw-window:rgba(255,255,255,.6);
+  --sw-sun:rgba(255,180,120,.4);
+  --sw-name-1:#e3197f; --sw-name-2:#9b1f8f; --sw-name-3:#0aa7c8;
+}
+:root[data-theme="light"][data-sw="outrun"] {
+  --accent:#e0265f; --accent-2:#d97312;
+  --ink-0:#4a1530; --ink-1:#6a2a3a; --ink-2:#9a5a55;
+  --line:#e0265f; --panel:rgba(255,250,245,.6); --panel-2:rgba(255,250,245,.6);
+  --sw-bg-top:#ffe1d8; --sw-bg-mid:#ffd0c0; --sw-bg-low:#ffc1d2; --sw-bg-bottom:#ffe9cf;
+  --sw-window:rgba(255,250,245,.6);
+  --sw-sun:rgba(255,170,90,.4);
+  --sw-name-1:#e0265f; --sw-name-2:#b3185f; --sw-name-3:#d97312;
+}
+:root[data-theme="light"][data-sw="pastel"] {
+  --accent:#d23f9e; --accent-2:#1aa6c6;
+  --ink-0:#3f2a6a; --ink-1:#5e3a7e; --ink-2:#8a6aa8;
+  --line:#d23f9e; --panel:rgba(255,255,255,.62); --panel-2:rgba(255,255,255,.62);
+  --sw-bg-top:#e6e0ff; --sw-bg-mid:#f0d8f5; --sw-bg-low:#ffe0ef; --sw-bg-bottom:#fff0e0;
+  --sw-window:rgba(255,255,255,.62);
+  --sw-sun:rgba(255,224,200,.4);
+  --sw-name-1:#c33fae; --sw-name-2:#7a4fd0; --sw-name-3:#1aa6c6;
+}
+:root[data-theme="light"][data-sw="cyber"] {
+  --accent:#1a52e6; --accent-2:#11a85c;
+  --ink-0:#0a2240; --ink-1:#1a3a5c; --ink-2:#5a7a98;
+  --line:#1a52e6; --panel:rgba(255,255,255,.6); --panel-2:rgba(255,255,255,.6);
+  --sw-bg-top:#dbe9ff; --sw-bg-mid:#cfe6f5; --sw-bg-low:#d6f0e6; --sw-bg-bottom:#eafaff;
+  --sw-window:rgba(255,255,255,.6);
+  --sw-sun:rgba(120,200,255,.35);
+  --sw-name-1:#1a52e6; --sw-name-2:#1466b0; --sw-name-3:#11a85c;
+}
+
+/* ===================== SCENE ===================== */
+body {
+  color: var(--ink-0);
+  background: linear-gradient(180deg,
+    var(--sw-bg-top) 0%, var(--sw-bg-mid) 38%, var(--sw-bg-low) 64%, var(--sw-bg-bottom) 100%) fixed;
+  overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; left: -50%; right: -50%; bottom: -10vh; height: 70vh;
+  z-index: -1; pointer-events: none; mix-blend-mode: screen; opacity: .55;
+  background:
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent-2) 55%, transparent) 0 2px, transparent 2px 64px),
+    repeating-linear-gradient(0deg,  color-mix(in srgb, var(--accent)   55%, transparent) 0 2px, transparent 2px 64px);
+  transform: perspective(40vh) rotateX(70deg); transform-origin: bottom center;
+  animation: sw-grid 4s linear infinite;
+}
+@keyframes sw-grid { from { background-position: 0 0, 0 0; } to { background-position: 0 64px, 0 64px; } }
+body::after {
+  content: ""; position: fixed; inset: 0 0 auto 0; height: 55vh;
+  z-index: -1; pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(60% 70% at 50% 26%, var(--sw-sun), transparent 60%);
+}
+
+/* ===================== TYPOGRAPHY (matching synthwave font) ===================== */
+.gtk-prof-name {
+  font-family: "Orbitron", "Share Tech Mono", monospace; font-weight: 800;
+  background: linear-gradient(180deg, var(--sw-name-1) 0%, var(--sw-name-2) 40%, var(--sw-name-3) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--accent) 70%, transparent));
+  text-transform: uppercase; letter-spacing: .03em;
+}
+.gtk-titlebar, .gtk-titlebar-label, .gtk-section-title {
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+}
+
+/* ===================== CHROME ===================== */
+.gtk-window, .gtk-footer-window, .cde-taskbar {
+  border: 1px solid var(--accent); border-radius: 8px;
+  background: var(--sw-window);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--accent) 50%, transparent),
+    inset 0 0 24px color-mix(in srgb, var(--accent-2) 12%, transparent);
+}
+.gtk-titlebar {
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--accent) 35%, transparent),
+    color-mix(in srgb, var(--accent-2) 25%, transparent));
+  border-bottom: 1px solid var(--accent); color: var(--ink-0);
+}
+.gtk-titlebar-label, .gtk-tb-btn { color: var(--ink-0); }
+
+.gtk-menubar, .gtk-toolbar { background: transparent; border-bottom: 1px solid color-mix(in srgb, var(--accent-2) 40%, transparent); }
+
+.gtk-menubar a, .gtk-tool-btn, .taskbar-icon, .gtk-tree-item,
+.gtk-badge, .gtk-tag, .gtk-status-cell, .gtk-infobox {
+  border: 1px solid var(--accent-2); border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-2) 7%, transparent); color: var(--ink-0);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--accent-2) 50%, transparent);
+  transition: box-shadow .15s ease, color .15s ease;
+}
+.gtk-menubar a:hover, .gtk-tool-btn:hover, .gtk-tree-item:hover, .taskbar-icon:hover {
+  color: var(--ink-0);
+  box-shadow: 0 0 14px var(--accent-2), inset 0 0 10px color-mix(in srgb, var(--accent-2) 30%, transparent);
+}
+.gtk-menubar a.active-tab, .gtk-tree-item.active {
+  border-color: var(--accent); color: var(--ink-0);
+  box-shadow: 0 0 14px var(--accent), inset 0 0 10px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.gtk-section-title {
+  background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid var(--accent);
+  color: var(--ink-0); text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.gtk-listview, .inset-table {
+  border: 1px solid color-mix(in srgb, var(--accent-2) 50%, transparent); border-radius: 8px;
+  background: var(--sw-window);
+}
+.gtk-listview-row { border-top: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+.gtk-avatar-frame, .avatar-frame {
+  border: 2px solid var(--accent); border-radius: 8px;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.gtk-update-box { border: 1px solid var(--accent-2); background: color-mix(in srgb, var(--accent-2) 10%, transparent); }
+.scroll-text { color: var(--ink-0); text-shadow: 0 0 8px color-mix(in srgb, var(--accent-2) 60%, transparent); }
+.gtk-body-text, .gtk-listview-col2, .gtk-listview-col1, .gtk-tree-head,
+.gtk-prof-sub, .gtk-prof-affil, .qual-sub, .paper-venue { color: var(--ink-1); }
+.gtk-statusbar { background: transparent; border-top: 1px solid color-mix(in srgb, var(--accent-2) 40%, transparent); }
+.gtk-content a, .gtk-footer-col a, .paper-doi { color: var(--accent-2); }
+
+/* JS-injected env box + theme toggle, themed to match */
+.env-box, .theme-toggle {
+  border: 1px solid var(--accent-2); border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-2) 7%, transparent); color: var(--ink-0);
+}
+.theme-toggle input { border: 1px solid var(--accent-2); background: color-mix(in srgb, var(--accent-2) 10%, transparent); }
+.theme-toggle input::after { background: var(--accent); }
+
+/* ===================== Palette switcher ===================== */
+.sw-switch { display: inline-flex; gap: 6px; margin-left: 8px; flex-wrap: wrap; }
+.sw-switch button {
+  cursor: pointer; padding: 4px 10px; border-radius: 999px;
+  font: 700 10px "Orbitron", var(--mono); text-transform: uppercase; letter-spacing: .06em;
+  border: 1px solid var(--accent-2); background: color-mix(in srgb, var(--accent-2) 10%, transparent);
+  color: var(--ink-0);
+}
+.sw-switch button:hover { box-shadow: 0 0 12px var(--accent-2); }
+.sw-switch button[aria-pressed="true"] {
+  border-color: var(--accent); color: var(--ink-0);
+  box-shadow: 0 0 14px var(--accent), inset 0 0 8px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) { body::before { animation: none; } }

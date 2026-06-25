@@ -1,6 +1,47 @@
 ﻿(function () {
   const root = document.documentElement;
   const themeKey = "ui-theme";
+  const paletteKey = "sw-palette";
+  const PALETTES = ["miami", "outrun", "pastel", "cyber"];
+
+  // Apply saved synthwave palette immediately to avoid a color flash.
+  (function () {
+    let saved = null;
+    try { saved = localStorage.getItem(paletteKey); } catch (e) {}
+    root.setAttribute("data-sw", PALETTES.indexOf(saved) >= 0 ? saved : "miami");
+  })();
+
+  function applyPalette(p) {
+    if (PALETTES.indexOf(p) < 0) p = "miami";
+    root.setAttribute("data-sw", p);
+    document.querySelectorAll(".sw-switch button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-sw") === p ? "true" : "false");
+    });
+    try { localStorage.setItem(paletteKey, p); } catch (e) {}
+  }
+
+  function initPaletteSwitch() {
+    const bar = document.querySelector(".cde-taskbar") || document.querySelector(".taskbar");
+    if (!bar || bar.querySelector(".sw-switch")) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "sw-switch";
+    wrap.title = "Color palette";
+    wrap.innerHTML = PALETTES.map(function (p) {
+      return '<button type="button" data-sw="' + p + '" aria-pressed="false">' + p + '</button>';
+    }).join("");
+
+    const updateBox = bar.querySelector(".gtk-update-box");
+    if (updateBox) { bar.insertBefore(wrap, updateBox); } else { bar.appendChild(wrap); }
+
+    wrap.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () { applyPalette(b.getAttribute("data-sw")); });
+    });
+
+    let saved = null;
+    try { saved = localStorage.getItem(paletteKey); } catch (e) {}
+    applyPalette(PALETTES.indexOf(saved) >= 0 ? saved : "miami");
+  }
 
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
@@ -21,7 +62,7 @@
     const saved = (function () {
       try { return localStorage.getItem(themeKey); } catch (e) { return null; }
     })();
-    applyTheme(saved === "dark" ? "dark" : "light");
+    applyTheme(saved === "light" ? "light" : "dark");
 
     const toggle = document.getElementById("themeSwitch");
     toggle.addEventListener("change", function () {
@@ -121,6 +162,7 @@
 
   initThemeToggle();
   ensureEnvBox();
+  initPaletteSwitch();
   applyContrastClasses();
   updateClock();
   fetchWeather();

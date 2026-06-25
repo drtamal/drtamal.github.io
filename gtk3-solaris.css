@@ -36,6 +36,14 @@
   --section-b: #ebf3f1;
   --stat-a: #ffffff;
   --stat-b: #e8f1f0;
+  /* Compatibility tokens referenced by inline styles (migrated from gtk-theme.css) */
+  --tx3: #607076;
+  --link: #0d6e78;
+  --title-in: #0d5b62;
+  --entry-bg: #fbfdfb;
+  --raised-hi: #ffffff;
+  --raised-sh: #bac8c8;
+  --win-bg3: #dce9e8;
 }
 
 :root[data-theme="dark"] {
@@ -69,6 +77,14 @@
   --section-b: #132126;
   --stat-a: #1a2c31;
   --stat-b: #142328;
+  /* Compatibility tokens referenced by inline styles (migrated from gtk-theme.css) */
+  --tx3: #8fa5ab;
+  --link: #7fd6de;
+  --title-in: #0c2b30;
+  --entry-bg: #132125;
+  --raised-hi: #2f4248;
+  --raised-sh: #0a1012;
+  --win-bg3: #17282d;
 }
 
 html, body { min-height: 100%; }
@@ -784,9 +800,9 @@ a[href$=".pdf"]:hover {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    border: 1px solid #57b9d2;
+    border: 1px solid var(--accent);
     padding: 8px 0;
-    background: #123434;
+    background: color-mix(in srgb, var(--accent) 14%, var(--btn-a));
 }
 
 .scroll-text {
@@ -794,7 +810,7 @@ a[href$=".pdf"]:hover {
     padding-left: 100%;
     animation: scroll-left 18s linear infinite;
     font-size: 14px;
-    color: #ffffff;
+    color: var(--ink-0);
 }
 
 @keyframes scroll-left {

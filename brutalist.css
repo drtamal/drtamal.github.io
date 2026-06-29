@@ -1,0 +1,117 @@
+/* ===========================================================
+   Soft Neo-Brutalist layer  —  load AFTER gtk3-solaris.css
+   Chunky offset shadows + bold blocks, but softened: gray
+   (not black) edges, translucent shadows, gentle radii.
+   Controls:
+     color theme  ->  <html data-sw="electric|acid|tangerine|ink">
+     mode         ->  <html data-theme="light|dark">  (light = default)
+   =========================================================== */
+
+/* ===================== LIGHT (default) ===================== */
+:root, :root[data-theme="light"] {
+  --bg-0:#f4f2ea; --bg-1:#f4f2ea; --bg-2:#f4f2ea;
+  --ink-0:#1f1f22; --ink-1:#33333a; --ink-2:#6a6a64;
+  --line:#2b2a26; --panel:#ffffff; --panel-2:#ffffff;
+  --accent-2:#e23a66; --ok:#0d7d38;
+
+  --b-bg:#f4f2ea; --b-surface:#ffffff; --b-edge:#2b2a26;
+  --b-shadow:rgba(20,18,12,.16); --b-ink:#1f1f22;
+  --accent:#2f5fe0; --b-active:#ffe27a; --b-active-ink:#2a2410; --b-title-ink:#ffffff;  /* electric */
+}
+:root[data-theme="light"][data-sw="acid"]      { --accent:#d6318c; --b-active:#d2ef6b; --b-active-ink:#26330a; --b-title-ink:#ffffff; }
+:root[data-theme="light"][data-sw="tangerine"] { --accent:#f0670f; --b-active:#5fd6da; --b-active-ink:#0c2c2e; --b-title-ink:#2a1400; }
+:root[data-theme="light"][data-sw="ink"]       { --accent:#2c2c30; --b-active:#ff6a61; --b-active-ink:#360f0c; --b-title-ink:#ffffff; }
+
+/* ===================== DARK (softened, low glare) ===================== */
+:root[data-theme="dark"] {
+  --bg-0:#16171b; --bg-1:#16171b; --bg-2:#16171b;
+  --ink-0:#dcdcd4; --ink-1:#cfcfc8; --ink-2:#94948d;
+  --line:#565a61; --panel:#1f2025; --panel-2:#1f2025;
+  --accent-2:#ff6f93; --ok:#3bc06a;
+
+  --b-bg:#16171b; --b-surface:#1f2025; --b-edge:#565a61;
+  --b-shadow:rgba(0,0,0,.5); --b-ink:#dcdcd4;
+  --accent:#6f8ad8; --b-active:#a98e3f; --b-active-ink:#1a1608; --b-title-ink:#f4f4ef;  /* electric */
+}
+:root[data-theme="dark"][data-sw="acid"]      { --accent:#e07cbb; --b-active:#8a9446; --b-active-ink:#13160a; --b-title-ink:#1a0f16; }
+:root[data-theme="dark"][data-sw="tangerine"] { --accent:#e08a52; --b-active:#39858a; --b-active-ink:#eafafb; --b-title-ink:#1c1206; }
+:root[data-theme="dark"][data-sw="ink"]       { --accent:#4a4d55; --b-active:#bd514a; --b-active-ink:#fbeae9; --b-title-ink:#f4f4ef; }
+
+/* ===================== COMPONENTS ===================== */
+body { background: var(--b-bg); color: var(--b-ink); }
+body::before, body::after { display: none !important; }   /* no scanlines */
+
+.gtk-window, .gtk-footer-window {
+  border: 2px solid var(--b-edge); border-radius: 8px;
+  background: var(--b-surface); box-shadow: 5px 5px 0 var(--b-shadow); margin-top: 14px;
+}
+.cde-taskbar {
+  border: 2px solid var(--b-edge); border-radius: 8px;
+  background: var(--b-surface); box-shadow: 4px 4px 0 var(--b-shadow);
+}
+.gtk-titlebar {
+  background: var(--accent); color: var(--b-title-ink);
+  border-bottom: 2px solid var(--b-edge); text-transform: uppercase;
+}
+.gtk-titlebar-label, .gtk-tb-btn { color: var(--b-title-ink); }
+.gtk-tb-btn { border: 2px solid var(--b-title-ink); width: 18px; height: 18px; border-radius: 3px; background: transparent; }
+
+.gtk-menubar, .gtk-toolbar { background: var(--b-surface); border-bottom: 2px solid var(--b-edge); }
+
+.gtk-menubar a, .gtk-tool-btn, .taskbar-icon, .gtk-tree-item,
+.gtk-badge, .gtk-tag, .gtk-status-cell, .gtk-infobox {
+  background: var(--b-surface); border: 2px solid var(--b-edge); border-radius: 5px;
+  box-shadow: 2px 2px 0 var(--b-shadow); color: var(--b-ink); font-weight: 700; text-shadow: none;
+  transition: transform .05s ease, box-shadow .05s ease, background .05s ease, color .05s ease;
+}
+.gtk-menubar a:hover, .gtk-tool-btn:hover, .gtk-tree-item:hover, .taskbar-icon:hover {
+  background: var(--accent); color: var(--b-title-ink);
+  transform: translate(2px,2px); box-shadow: 0 0 0 var(--b-shadow);
+}
+.gtk-menubar a.active-tab, .gtk-tree-item.active {
+  background: var(--b-active); color: var(--b-active-ink);
+  transform: translate(2px,2px); box-shadow: 0 0 0 var(--b-shadow);
+}
+
+.gtk-prof-name {
+  color: var(--b-ink); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(28px, 3.2vw, 46px); letter-spacing: -.01em; text-shadow: none;
+}
+.gtk-prof-sub, .gtk-prof-affil, .gtk-body-text, .gtk-listview-col2,
+.gtk-listview-col1, .gtk-tree-head, .qual-sub, .paper-venue { color: var(--b-ink); }
+
+.gtk-section-title {
+  background: var(--b-active); color: var(--b-active-ink);
+  border: 2px solid var(--b-edge); border-radius: 6px; text-transform: uppercase; text-shadow: none;
+}
+.gtk-listview, .inset-table { border: 2px solid var(--b-edge); border-radius: 8px; background: var(--b-surface); }
+.gtk-listview-row { border-top: 1px solid var(--b-edge); }
+.gtk-avatar-frame, .avatar-frame { border: 2px solid var(--b-edge); border-radius: 6px; }
+.gtk-update-box { border: 2px solid var(--b-edge); border-radius: 6px; background: var(--b-active); }
+.scroll-text { color: var(--b-active-ink); font-weight: 700; text-shadow: none; }
+.gtk-statusbar { background: var(--b-surface); border-top: 2px solid var(--b-edge); }
+.gtk-status-ok { color: var(--ok); }
+.gtk-content a, .gtk-footer-col a, .paper-doi { color: var(--accent); }
+
+/* Globe logo */
+.cde-logo { font-size: 16px; line-height: 1; gap: 0; }
+.cde-logo::before { display: none; }
+
+/* JS-injected widgets */
+.env-box, .theme-toggle {
+  background: var(--b-surface); border: 2px solid var(--b-edge); border-radius: 5px;
+  box-shadow: 2px 2px 0 var(--b-shadow); color: var(--b-ink); font-weight: 700;
+}
+.theme-toggle input { border: 2px solid var(--b-edge); border-radius: 4px; background: var(--b-surface); }
+.theme-toggle input::after { background: var(--accent); }
+
+/* ===================== Color-theme switcher ===================== */
+.sw-switch { display: inline-flex; gap: 6px; margin-left: 8px; flex-wrap: wrap; }
+.sw-switch button {
+  cursor: pointer; padding: 4px 10px; border: 2px solid var(--b-edge); border-radius: 6px;
+  background: var(--b-surface); box-shadow: 2px 2px 0 var(--b-shadow);
+  font: 700 10px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--b-ink);
+  transition: transform .05s ease, box-shadow .05s ease, background .05s ease, color .05s ease;
+}
+.sw-switch button:hover { background: var(--accent); color: var(--b-title-ink); transform: translate(2px,2px); box-shadow: 0 0 0 var(--b-shadow); }
+.sw-switch button[aria-pressed="true"] { background: var(--b-active); color: var(--b-active-ink); transform: translate(2px,2px); box-shadow: 0 0 0 var(--b-shadow); }

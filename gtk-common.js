@@ -1,18 +1,18 @@
 ﻿(function () {
   const root = document.documentElement;
   const themeKey = "ui-theme";
-  const paletteKey = "sw-palette";
-  const PALETTES = ["miami", "outrun", "pastel", "cyber"];
+  const paletteKey = "ui-palette";
+  const PALETTES = ["electric", "acid", "tangerine", "ink"];
 
-  // Apply saved synthwave palette immediately to avoid a color flash.
+  // Apply saved color theme immediately to avoid a color flash.
   (function () {
     let saved = null;
     try { saved = localStorage.getItem(paletteKey); } catch (e) {}
-    root.setAttribute("data-sw", PALETTES.indexOf(saved) >= 0 ? saved : "miami");
+    root.setAttribute("data-sw", PALETTES.indexOf(saved) >= 0 ? saved : "electric");
   })();
 
   function applyPalette(p) {
-    if (PALETTES.indexOf(p) < 0) p = "miami";
+    if (PALETTES.indexOf(p) < 0) p = "electric";
     root.setAttribute("data-sw", p);
     document.querySelectorAll(".sw-switch button").forEach(function (b) {
       b.setAttribute("aria-pressed", b.getAttribute("data-sw") === p ? "true" : "false");
@@ -40,7 +40,7 @@
 
     let saved = null;
     try { saved = localStorage.getItem(paletteKey); } catch (e) {}
-    applyPalette(PALETTES.indexOf(saved) >= 0 ? saved : "miami");
+    applyPalette(PALETTES.indexOf(saved) >= 0 ? saved : "electric");
   }
 
   function applyTheme(theme) {
@@ -62,7 +62,7 @@
     const saved = (function () {
       try { return localStorage.getItem(themeKey); } catch (e) { return null; }
     })();
-    applyTheme(saved === "light" ? "light" : "dark");
+    applyTheme(saved === "dark" ? "dark" : "light");
 
     const toggle = document.getElementById("themeSwitch");
     toggle.addEventListener("change", function () {

@@ -355,6 +355,7 @@ a { color: inherit; text-decoration: none; }
   padding: 12px;
   display: grid;
   gap: 12px;
+  align-content: start;   /* keep boxes at natural height, don't stretch to fill */
   background: linear-gradient(180deg, var(--section-a), var(--section-b));
 }
 

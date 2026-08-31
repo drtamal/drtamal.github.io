@@ -98,20 +98,24 @@
       <h2 class="gtk-section-title">Courses Taught</h2>
       <div class="gtk-listview">
         <div class="gtk-listview-row">
+          <div class="gtk-listview-col1">SDS 513</div>
+          <div class="gtk-listview-col2">Natural Language Processing (MSc) - Fall 2026 <a href="#" class="slide-contrast" onclick="openModal('nlpModal');return false;">Slides</a></div>
+        </div>
+        <div class="gtk-listview-row">
           <div class="gtk-listview-col1">CSE 11112</div>
           <div class="gtk-listview-col2">Introduction to Artificial Intelligence (B.Tech) - Summer 2024, 2025, 2026 <a href="#" class="slide-contrast" onclick="openModal('aiModal');return false;">Slides</a></div>
         </div>
         <div class="gtk-listview-row">
           <div class="gtk-listview-col1">CSE 21816</div>
-          <div class="gtk-listview-col2">Machine Learning - Winter 2023, Summer/Winter 2024, Summer/Winter 2025 (PhD) <a href="#" class="slide-contrast" onclick="openModal('mlModal');return false;">Slides</a></div>
+          <div class="gtk-listview-col2">Machine Learning (PhD)- Winter 2023, Summer/Winter 2024, Summer/Winter 2025 <a href="#" class="slide-contrast" onclick="openModal('mlModal');return false;">Slides</a></div>
         </div>
         <div class="gtk-listview-row">
           <div class="gtk-listview-col1">CSE203</div>
-          <div class="gtk-listview-col2">Business Intelligence (BCA) - Fall 2024, Fall 2026 <a href="#" class="slide-contrast" onclick="openModal('biModal');return false;">Slides</a></div>
+          <div class="gtk-listview-col2">Business Intelligence (NEP) - Fall 2024, Fall 2026 <a href="#" class="slide-contrast" onclick="openModal('biModal');return false;">Slides</a></div>
         </div>
         <div class="gtk-listview-row">
-          <div class="gtk-listview-col1">CSE22845</div>
-          <div class="gtk-listview-col2">Applied Computing (M.Tech) - Fall 2024, Fall 2025, Fall 2026</div>
+          <div class="gtk-listview-col1">CSE21842</div>
+          <div class="gtk-listview-col2">Soft Computing (M.Tech) - Fall 2024, Fall 2025, Fall 2026</div>
         </div>
         <div class="gtk-listview-row">
           <div class="gtk-listview-col1">TOL 4204</div>
@@ -309,7 +313,7 @@
   <div class="gtk-dialog">
     <div class="gtk-dialog-titlebar">
       <div class="gtk-titlebar-btns"><div class="gtk-tb-btn">_</div></div>
-      <div class="gtk-titlebar-label">Business Intelligence (CSE 203) - Lecture Slides</div>
+      <div class="gtk-titlebar-label">Business Intelligence (CSE 223) - Lecture Slides</div>
       <div class="gtk-dialog-close" onclick="closeModal('biModal')">X</div>
     </div>
     <div class="gtk-dialog-body">
@@ -352,7 +356,65 @@
     </div>
   </div>
 </div>
-
+<div id="nlpModal" class="gtk-modal" onclick="if(event.target===this)closeModal('nlpModal')">
+  <div class="gtk-dialog">
+    <div class="gtk-dialog-titlebar">
+      <div class="gtk-titlebar-btns"><div class="gtk-tb-btn">_</div></div>
+      <div class="gtk-titlebar-label">Natural Language Processing (SDS 513) - Lecture Slides</div>
+      <div class="gtk-dialog-close" onclick="closeModal('biModal')">X</div>
+    </div>
+    <div class="gtk-dialog-body">
+      <div class="gtk-lecture-grid">
+        <a href="slides/NLP/L1.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L1.png" alt="Lecture 1">
+        <span>Lecture 1<br>NLP Basics</span>
+      </a>
+    
+      <a href="slides/NLP/L2.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L2.png" alt="Lecture 2">
+        <span>Lecture 2<br>Learning, Search, Representation</span>
+      </a>
+    
+      <a href="slides/NLP/L3.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L3.png" alt="Lecture 3">
+        <span>Lecture 3<br>BoW and Vector Space Model</span>
+      </a>
+    
+      <a href="slides/NLP/L4.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L4.png" alt="Lecture 4">
+        <span>Lecture 4<br>Naïve Bayes and Smoothing</span>
+      </a>
+    
+      <a href="slides/NLP/L5.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L5.png" alt="Lecture 5">
+        <span>Lecture 5<br>Discriminative Learning</span>
+      </a>
+    
+      <a href="slides/NLP/L6.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L6.png" alt="Lecture 6">
+        <span>Lecture 6<br>Logistic Regression</span>
+      </a>
+    
+      <a href="slides/NLP/L7.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L7.png" alt="Lecture 7">
+        <span>Lecture 7<br>Regularisation and Gradient-Based Optimization</span>
+      </a>
+      <a href="slides/NLP/L8.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L8.png" alt="Lecture 8">
+        <span>Lecture 8<br>Model Evaluation Metric</span>
+      </a>
+      <a href="slides/NLP/L9.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L9.png" alt="Lecture 9">
+        <span>Lecture 9<br>Feed Forward Neural Network</span>
+      </a>
+      <a href="slides/NLP/L10.pdf" target="_blank" class="lecture-card">
+        <img src="slides/NLP/thumbs/L10.png" alt="Lecture 10">
+        <span>Lecture 10<br>Activation Functions</span>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="gtk-common.js"></script>
 </body>

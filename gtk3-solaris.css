@@ -839,10 +839,10 @@ a[href$=".pdf"]:hover {
     align-items:center;
     justify-content:flex-start;
 
-    background:rgba(255,255,255,0.04);
-    border:1px solid #89d8e7;
+    background:var(--b-surface);
+    border:1px solid var(--panel-edge);
     text-decoration:none;
-    color:#d6e6e6;
+    color:var(--ink-1);
 
     padding:12px;
     min-height:240px;
@@ -880,7 +880,7 @@ a[href$=".pdf"]:hover {
     overflow-wrap:break-word;
     word-break:break-word;
 
-    color:#dfeeee;
+    color:var(--ink-1);
 }
 
 /* Modal body scrolling */
